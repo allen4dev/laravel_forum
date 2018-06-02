@@ -22,6 +22,29 @@
 </head>
 <body>
     <div id="App">
+        <header class="Header">
+            <p class="Logo">Forum</p>
+
+            <form class="Searchbar">
+                <input type="text" class="Searchbar-input" />
+
+                <button class="Searchbar-button" type="submit">
+                    Search
+                </button>
+            </form>
+
+            <nav class="Navigation">
+                <ul class="Navigation-list">
+                    <li class="Navigation-item">
+                        <a href="#" class="Navigation-link">Sign in</a>
+                    </li>
+                    <li class="Navigation-item">
+                        <a href="#" class="Navigation-link">Sign up</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
         @yield('content')
     </div>
 </body>
