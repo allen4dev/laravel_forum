@@ -1,3 +1,13 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 .Header {
   border-bottom: 1px solid #000;
   padding: 1em 4em;
@@ -16,6 +26,7 @@
   font-weight: bold;
 }
 .Searchbar {
+  margin: 0 2em;
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
   display: -webkit-box;
@@ -26,6 +37,7 @@
           align-items: center;
 }
 .Searchbar-input {
+  background-color: #d3d3d3;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -45,28 +57,37 @@
 .Navigation-item {
   padding: 0.5em;
 }
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.Hero {
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-ul {
-  margin: 0;
-  padding: 0;
+.Hero-content {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-li {
-  list-style: none;
+.Hero-title {
+  font-size: 2em;
 }
-a {
-  text-decoration: none;
-}
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #bada55;
+.Hero-text {
+  margin: 1em 0;
 }

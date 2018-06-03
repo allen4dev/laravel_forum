@@ -4,21 +4,23 @@
 <section class="Home">
     <!-- Hero -->
     <section class="Hero">
-        <h1 class="Hero-title">Its kinda like netflix for your career!</h1>
+        <div class="Hero-content">
+            <h1 class="Hero-title">Its kinda like netflix for your career!</h1>
 
-        <p class="Hero-text">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis mollitia nihil esse, at ipsam officia consectetur fuga
-            reprehenderit velit expedita vitae repellat voluptatem doloremque dolor? Quibusdam soluta corporis aliquid quos.
-        </p>
+            <p class="Hero-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis mollitia nihil esse, at ipsam officia consectetur fuga
+                reprehenderit velit expedita vitae repellat voluptatem doloremque dolor? Quibusdam soluta corporis aliquid quos.
+            </p>
 
-        <div class="Hero-actions">
-            <a href="#" class="Hero-link">Get started</a>
-            <a href="#" class="Hero-link">Browse now</a>
+            <div class="Hero-actions">
+                <a href="#" class="Hero-link">Get started</a>
+                <a href="#" class="Hero-link">Browse now</a>
+            </div>
+
+            <figure class="Hero-photo">
+                <img src="" alt="Forum hero" class="Hero-image" />
+            </figure>
         </div>
-
-        <figure class="Hero-photo">
-            <img src="" alt="Forum hero" class="Hero-image" />
-        </figure>
     </section>
     <!-- /Hero -->
 
