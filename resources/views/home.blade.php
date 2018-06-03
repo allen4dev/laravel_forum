@@ -26,7 +26,7 @@
 
     <!-- Skills -->
     <ul class="Skills">
-        <li class="Skill-list">
+        <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
             </figure>
@@ -34,7 +34,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        <li class="Skill-list">
+        <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
             </figure>
@@ -42,7 +42,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        <li class="Skill-list">
+        <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
             </figure>
@@ -50,7 +50,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        <li class="Skill-list">
+        <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
             </figure>
@@ -58,7 +58,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        <li class="Skill-list">
+        <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
             </figure>
@@ -79,29 +79,12 @@
     </section>
     <!-- /About -->
 
-    <!-- ThreadList -->
-    <section class="ThreadList">
-        <section class="ThreadList-items">
-            <article class="Thread">
-                <figure class="Thread-photo">
-                    <img src="{Thread image}" alt="{Thread title}" class="Thread-image">
-                </figure>
-
-                <section class="Thread-content">
-                    <span class="Thread-skill">{Thread skill}</span>
-                    <h3 class="Thread-title">{Thread title}</h3>
-                    <ul class="Thread-menu">
-                        <span class="Thread-menuItem">81 lessons</span>
-                        <span class="Thread-menuItem">Beginner</span>
-                    </ul>
-                </section>
-            </article>
-        </section>
-
-        <a href="#" class="ThreadList-button">
+    <!-- Threaditem -->
+    <section class="Threaditem">
+        <section class="Threaditem-button">
             Show more
         </a>
     </section>
-    <!-- /ThreadList -->
+    <!-- /Threaditem -->
 </section>
 @endsection

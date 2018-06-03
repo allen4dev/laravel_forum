@@ -1,19 +1,35 @@
 .Hero
-    height 50vh
-    display flex
-    justify-content center
-    align-items center
+  height 50vh
+  display flex
+  justify-content center
+  align-items center
 
-.Hero-content
+  &-content
     width 80%
     display flex
     flex-direction column
     justify-content center
     align-items center
 
-.Hero-title
+  &-title
     font-size 2em
 
-.Hero-text
+  &-text
     margin 1em 0
 
+.Skills
+  display flex
+  justify-content space-between
+  padding 0 4em
+
+.Skill
+  flex-basis 15%
+  display flex
+  flex-direction column
+  align-items center
+
+  &-title
+    font-size 1em
+
+  &-seriesCount, &-lessonsCount
+    font-size .8em
