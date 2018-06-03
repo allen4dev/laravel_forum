@@ -78,20 +78,26 @@
 
     <!-- ThreadList -->
     <section class="ThreadList">
-        <article class="Thread">
-            <figure class="Thread-photo">
-                <img src="{Thread image}" alt="{Thread title}" class="Thread-image">
-            </figure>
+        <section class="ThreadList-items">
+            <article class="Thread">
+                <figure class="Thread-photo">
+                    <img src="{Thread image}" alt="{Thread title}" class="Thread-image">
+                </figure>
 
-            <section class="Thread-content">
-                <span class="Thread-skill">{Thread skill}</span>
-                <h3 class="Thread-title">{Thread title}</h3>
-                <ul class="Thread-menu">
-                    <span class="Thread-menuItem">81 lessons</span>
-                    <span class="Thread-menuItem">Beginner</span>
-                </ul>
-            </section>
-        </article>
+                <section class="Thread-content">
+                    <span class="Thread-skill">{Thread skill}</span>
+                    <h3 class="Thread-title">{Thread title}</h3>
+                    <ul class="Thread-menu">
+                        <span class="Thread-menuItem">81 lessons</span>
+                        <span class="Thread-menuItem">Beginner</span>
+                    </ul>
+                </section>
+            </article>
+        </section>
+
+        <a href="#" class="ThreadList-button">
+            Show more
+        </a>
     </section>
     <!-- /ThreadList -->
 </section>
