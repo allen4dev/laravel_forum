@@ -12,7 +12,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -23,11 +23,14 @@
 </head>
 
 <body>
-    <div id="App">
+    <main id="App">
         <!-- Header -->
         <header class="Header">
-            <p class="Logo">Forum</p>
+            <!-- Logo -->            
+            <p class="Logo">Laracasts</p>
+            <!-- /Logo -->
 
+            <!-- Searchbar -->
             <form class="Searchbar">
                 <input type="text" class="Searchbar-input" />
 
@@ -35,7 +38,9 @@
                     Search
                 </button>
             </form>
+            <!-- /Searchbar -->
 
+            <!-- Navigation -->
             <nav class="Navigation">
                 <ul class="Navigation-list">
                     <li class="Navigation-item">
@@ -46,10 +51,13 @@
                     </li>
                 </ul>
             </nav>
+            <!-- /Navigation -->
         </header>
         <!-- /Header -->
 
+        <!-- Content -->
         @yield('content')
+        <!-- /Content -->
 
         <!-- Footer -->
         <footer class="Footer">
@@ -102,7 +110,7 @@
             </section>
         </footer>
         <!-- /Footer -->
-    </div>
+    </main>
 </body>
 
 </html>
