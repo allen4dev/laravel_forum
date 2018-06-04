@@ -26,7 +26,7 @@
     <main id="App">
         <!-- Header -->
         <header class="Header">
-            <!-- Logo -->            
+            <!-- Logo -->
             <p class="Logo">Laracasts</p>
             <!-- /Logo -->
 

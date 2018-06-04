@@ -1,5 +1,4 @@
-@extends ('layouts.app')
-
+@extends ('layouts.app') 
 @section ('content')
 <section class="Home">
     <!-- Hero -->
@@ -9,7 +8,8 @@
 
             <p class="Hero-text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis mollitia nihil esse, at ipsam officia consectetur fuga
-                reprehenderit velit expedita vitae repellat voluptatem doloremque dolor? Quibusdam soluta corporis aliquid quos.
+                reprehenderit velit expedita vitae repellat voluptatem doloremque dolor? Quibusdam soluta corporis aliquid
+                quos.
             </p>
 
             <div class="Hero-actions">
@@ -34,7 +34,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        
+
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -43,7 +43,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        
+
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -52,7 +52,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        
+
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -61,7 +61,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        
+
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -70,7 +70,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
-        
+
     </ul>
     <!-- /Skills -->
 
@@ -84,12 +84,198 @@
     </section>
     <!-- /About -->
 
-    <!-- Threaditem -->
-    <section class="Threaditem">
-        <section class="Threaditem-button">
-            Show more
+    <!-- ThreadList -->
+    <section class="ThreadList">
+        <article class="ThreadList-items">
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+            <article class="ThreadItem">
+                <header class="ThreadItem-heading">
+                    <a href="#" class="ThreadItem-skillLink">
+                        <span class="ThreadItem-skillName">{Thread skill}</span>
+                    </a>
+                </header>
+
+                <section class="ThreadItem-body">
+                    <h4 class="ThreadItem-title">
+                        <a href="#" class="ThreadItem-link">
+                            {Thread title}
+                        </a>
+                    </h4>
+                </section>
+
+                <footer class="ThreadItem-footer">
+                    <div class="ThreadItem-info">
+                        <span class="ThreadItem-count ThreadItem-lessonsCount">{Thread lessons count}</span>
+                        <span class="ThreadItem-count ThreadItem-level">{Thread level}</span>
+                    </div>
+                </footer>
+            </article>
+
+        </article>
+
+        <a class="ThreadList-button" href="#" />> Show more
         </a>
+        </a>
+        <!-- /ThreadList -->
     </section>
-    <!-- /Threaditem -->
-</section>
 @endsection
