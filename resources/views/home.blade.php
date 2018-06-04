@@ -96,7 +96,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>
@@ -119,7 +119,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>
@@ -142,7 +142,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>
@@ -165,7 +165,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>
@@ -188,7 +188,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>
@@ -211,7 +211,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>
@@ -234,7 +234,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>
@@ -257,7 +257,7 @@
 
                 <section class="ThreadItem-body">
                     <h4 class="ThreadItem-title">
-                        <a href="#" class="ThreadItem-link">
+                        <a href="/threads/1" class="ThreadItem-link">
                             {Thread title}
                         </a>
                     </h4>

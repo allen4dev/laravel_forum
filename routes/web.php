@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/threads/{thread}', function () {
+    return view('threads.detail');
+})->name('home');
+
 Auth::routes();
