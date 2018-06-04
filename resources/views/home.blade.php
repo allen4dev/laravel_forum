@@ -34,6 +34,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
+        
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -42,6 +43,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
+        
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -50,6 +52,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
+        
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -58,6 +61,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
+        
         <li class="Skill">
             <figure class="Skill-photo">
                 <img class="Skill-image" src="" alt="Skill name" />
@@ -66,6 +70,7 @@
             <span class="Skill-seriesCount">{Skill series count}</span>
             <span class="Skill-lessonsCount">{Skill lessons count}</span>
         </li>
+        
     </ul>
     <!-- /Skills -->
 
