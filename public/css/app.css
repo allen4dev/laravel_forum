@@ -182,3 +182,86 @@ a {
       -ms-flex-align: start;
           align-items: flex-start;
 }
+.Thread-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em 4em;
+}
+.Thread-headingTitle {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+.Thread-title {
+  font-size: 2em;
+}
+.Thread-headingContent {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.Thread-content {
+  padding: 2em 4em;
+}
+.Thread-footer {
+  padding: 0 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.RepliesSection {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.RepliesSection-heading {
+  padding: 1em 0;
+}
+.ReplyBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.ReplyBar-form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.ReplyBar-input {
+  width: 100%;
+  padding: 0.5em;
+}
+.ReplyBar-footer {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+.ReplyBar-socialLogin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ReplyList {
+  padding: 2em 0;
+}
+.Reply {
+  padding: 1em 0;
+}
+.Reply:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+.Reply-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.Reply-username {
+  margin-bottom: 0.5em;
+}
+.Reply-meta {
+  padding: 1em 0;
+}

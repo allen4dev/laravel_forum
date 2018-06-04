@@ -4,16 +4,20 @@
   <article class="Thread">
     <!-- Thread-heading -->
     <header class="Thread-heading">
-      <h1 class="Thread-title">{Thread title}</h1>
-
-      <div class="Thread-headingInfo">
-        <span class="Thread-skill">{Thread Skill}</span>
-        <span class="Thread-author">{Thread author}</span>
+      <div class="Thread-headingTitle">
+        <h1 class="Thread-title">{Thread title}</h1>
       </div>
 
-      <!-- Thread-description -->
-      <section class="Thread-details">
-        <p class="Thread-description">{Thread description}</p>
+      <section class="Thread-headingContent">
+        <div class="Thread-info">
+          <span class="Thread-skill">{Thread Skill}</span>
+          <span class="Thread-author">{Thread author}</span>
+        </div>
+
+        <!-- Thread-description -->
+        <section class="Thread-details">
+          <p class="Thread-description">{Thread description}</p>
+        </section>
       </section>
       <!-- /Thread-description -->
     </header>
@@ -56,6 +60,118 @@
 
         <!-- ReplyList -->
         <ul class="ReplyList">
+          <li class="Reply">
+            <header class="Reply-heading">
+              <figure class="Avatar">
+                <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
+              </figure>
+
+              <section class="Reply-details">
+                <h4 class="Reply-username">
+                  <a href="#" class="Reply-userlink">{Username}</a>
+                </h4>
+
+                <p class="Reply-body">
+                  {Reply body}
+                </p>
+              </section>
+            </header>
+
+            <section class="Reply-meta">
+              <p>
+                {Reply meta information (photos, code examples, etc)}
+              </p>
+            </section>
+
+            <footer class="Reply-responses">
+              {More ReplyList Here}
+            </footer>
+          </li>
+
+          <li class="Reply">
+            <header class="Reply-heading">
+              <figure class="Avatar">
+                <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
+              </figure>
+
+              <section class="Reply-details">
+                <h4 class="Reply-username">
+                  <a href="#" class="Reply-userlink">{Username}</a>
+                </h4>
+
+                <p class="Reply-body">
+                  {Reply body}
+                </p>
+              </section>
+            </header>
+
+            <section class="Reply-meta">
+              <p>
+                {Reply meta information (photos, code examples, etc)}
+              </p>
+            </section>
+
+            <footer class="Reply-responses">
+              {More ReplyList Here}
+            </footer>
+          </li>
+
+          <li class="Reply">
+            <header class="Reply-heading">
+              <figure class="Avatar">
+                <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
+              </figure>
+
+              <section class="Reply-details">
+                <h4 class="Reply-username">
+                  <a href="#" class="Reply-userlink">{Username}</a>
+                </h4>
+
+                <p class="Reply-body">
+                  {Reply body}
+                </p>
+              </section>
+            </header>
+
+            <section class="Reply-meta">
+              <p>
+                {Reply meta information (photos, code examples, etc)}
+              </p>
+            </section>
+
+            <footer class="Reply-responses">
+              {More ReplyList Here}
+            </footer>
+          </li>
+
+          <li class="Reply">
+            <header class="Reply-heading">
+              <figure class="Avatar">
+                <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
+              </figure>
+
+              <section class="Reply-details">
+                <h4 class="Reply-username">
+                  <a href="#" class="Reply-userlink">{Username}</a>
+                </h4>
+
+                <p class="Reply-body">
+                  {Reply body}
+                </p>
+              </section>
+            </header>
+
+            <section class="Reply-meta">
+              <p>
+                {Reply meta information (photos, code examples, etc)}
+              </p>
+            </section>
+
+            <footer class="Reply-responses">
+              {More ReplyList Here}
+            </footer>
+          </li>
+
           <li class="Reply">
             <header class="Reply-heading">
               <figure class="Avatar">
