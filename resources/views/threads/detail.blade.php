@@ -68,7 +68,7 @@
 
               <section class="Reply-details">
                 <h4 class="Reply-username">
-                  <a href="#" class="Reply-userlink">{Username}</a>
+                  <a href="/users/1" class="Reply-userlink">{Username}</a>
                 </h4>
 
                 <p class="Reply-body">
@@ -96,7 +96,7 @@
 
               <section class="Reply-details">
                 <h4 class="Reply-username">
-                  <a href="#" class="Reply-userlink">{Username}</a>
+                  <a href="/users/1" class="Reply-userlink">{Username}</a>
                 </h4>
 
                 <p class="Reply-body">
@@ -124,7 +124,7 @@
 
               <section class="Reply-details">
                 <h4 class="Reply-username">
-                  <a href="#" class="Reply-userlink">{Username}</a>
+                  <a href="/users/1" class="Reply-userlink">{Username}</a>
                 </h4>
 
                 <p class="Reply-body">
@@ -152,7 +152,7 @@
 
               <section class="Reply-details">
                 <h4 class="Reply-username">
-                  <a href="#" class="Reply-userlink">{Username}</a>
+                  <a href="/users/1" class="Reply-userlink">{Username}</a>
                 </h4>
 
                 <p class="Reply-body">
@@ -180,7 +180,7 @@
 
               <section class="Reply-details">
                 <h4 class="Reply-username">
-                  <a href="#" class="Reply-userlink">{Username}</a>
+                  <a href="/users/1" class="Reply-userlink">{Username}</a>
                 </h4>
 
                 <p class="Reply-body">

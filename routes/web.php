@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Route::get('/threads/{thread}', function () {
     return view('threads.detail');
-})->name('home');
+})->name('threads.detail');
+
+Route::get('/users/{user}', function () {
+    return view('users.profile');
+})->name('users.profile');
 
 Auth::routes();
