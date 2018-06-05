@@ -27,7 +27,9 @@
         <!-- Header -->
         <header class="Header">
             <!-- Logo -->
-            <p class="Logo">Laracasts</p>
+            <p class="Logo">
+                <a href="/" class="Logo-link">Laracasts</a>
+            </p>
             <!-- /Logo -->
 
             <!-- Searchbar -->

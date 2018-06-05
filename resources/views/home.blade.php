@@ -26,49 +26,69 @@
 
     <!-- Skills -->
     <ul class="Skills">
-        <li class="Skill">
-            <figure class="Skill-photo">
-                <img class="Skill-image" src="" alt="Skill name" />
+        <li class="SkillItem">
+            <figure class="SkillItem-photo">
+                <img class="SkillItem-image" src="" alt="Skill name" />
             </figure>
-            <h2 class="Skill-title">{Skill title}</h2>
-            <span class="Skill-seriesCount">{Skill series count}</span>
-            <span class="Skill-lessonsCount">{Skill lessons count}</span>
+
+            <h2 class="SkillItem-title">
+                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
+            </h2>
+
+            <span class="SkillItem-seriesCount">{Skill series count}</span>
+            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
         </li>
 
-        <li class="Skill">
-            <figure class="Skill-photo">
-                <img class="Skill-image" src="" alt="Skill name" />
+        <li class="SkillItem">
+            <figure class="SkillItem-photo">
+                <img class="SkillItem-image" src="" alt="Skill name" />
             </figure>
-            <h2 class="Skill-title">{Skill title}</h2>
-            <span class="Skill-seriesCount">{Skill series count}</span>
-            <span class="Skill-lessonsCount">{Skill lessons count}</span>
+
+            <h2 class="SkillItem-title">
+                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
+            </h2>
+
+            <span class="SkillItem-seriesCount">{Skill series count}</span>
+            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
         </li>
 
-        <li class="Skill">
-            <figure class="Skill-photo">
-                <img class="Skill-image" src="" alt="Skill name" />
+        <li class="SkillItem">
+            <figure class="SkillItem-photo">
+                <img class="SkillItem-image" src="" alt="Skill name" />
             </figure>
-            <h2 class="Skill-title">{Skill title}</h2>
-            <span class="Skill-seriesCount">{Skill series count}</span>
-            <span class="Skill-lessonsCount">{Skill lessons count}</span>
+
+            <h2 class="SkillItem-title">
+                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
+            </h2>
+
+            <span class="SkillItem-seriesCount">{Skill series count}</span>
+            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
         </li>
 
-        <li class="Skill">
-            <figure class="Skill-photo">
-                <img class="Skill-image" src="" alt="Skill name" />
+        <li class="SkillItem">
+            <figure class="SkillItem-photo">
+                <img class="SkillItem-image" src="" alt="Skill name" />
             </figure>
-            <h2 class="Skill-title">{Skill title}</h2>
-            <span class="Skill-seriesCount">{Skill series count}</span>
-            <span class="Skill-lessonsCount">{Skill lessons count}</span>
+
+            <h2 class="SkillItem-title">
+                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
+            </h2>
+
+            <span class="SkillItem-seriesCount">{Skill series count}</span>
+            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
         </li>
 
-        <li class="Skill">
-            <figure class="Skill-photo">
-                <img class="Skill-image" src="" alt="Skill name" />
+        <li class="SkillItem">
+            <figure class="SkillItem-photo">
+                <img class="SkillItem-image" src="" alt="Skill name" />
             </figure>
-            <h2 class="Skill-title">{Skill title}</h2>
-            <span class="Skill-seriesCount">{Skill series count}</span>
-            <span class="Skill-lessonsCount">{Skill lessons count}</span>
+
+            <h2 class="SkillItem-title">
+                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
+            </h2>
+
+            <span class="SkillItem-seriesCount">{Skill series count}</span>
+            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
         </li>
 
     </ul>
@@ -278,4 +298,5 @@
         </a>
         <!-- /ThreadList -->
     </section>
+    <!-- /ThreadList -->
 @endsection

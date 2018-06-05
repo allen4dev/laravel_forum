@@ -23,4 +23,8 @@ Route::get('/users/{user}', function () {
     return view('users.profile');
 })->name('users.profile');
 
+Route::get('/skills/{skill}', function () {
+    return view('skills.detail');
+})->name('skills.detail');
+
 Auth::routes();
