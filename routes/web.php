@@ -27,4 +27,8 @@ Route::get('/skills/{skill}', function () {
     return view('skills.detail');
 })->name('skills.detail');
 
+Route::get('/search', function () {
+    return view('search');
+});
+
 Auth::routes();
