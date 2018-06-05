@@ -82,7 +82,7 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1em;
 }
-.ThreadList-button {
+.ThreadList-items-button {
   display: block;
   text-align: center;
   padding: 1em 0;
@@ -263,5 +263,50 @@ a {
   margin-bottom: 0.5em;
 }
 .Reply-meta {
+  padding: 1em 0;
+}
+.Profile-heading {
+  background-color: #d3d3d3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em 4em;
+}
+.Profile-headingContent {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.Profile-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Profile-detail {
+  padding: 0 1em;
+  text-align: center;
+}
+.Activities {
+  max-width: 70%;
+  margin: 2em auto;
+}
+.Activity:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+.Activity-title {
+  margin-top: 1em;
+}
+.Activity-body {
   padding: 1em 0;
 }
