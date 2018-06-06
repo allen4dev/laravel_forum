@@ -31,4 +31,8 @@ Route::get('/search', function () {
     return view('search');
 });
 
+Route::get('/series/{serie}', function () {
+    return view('series.detail');
+});
+
 Auth::routes();
