@@ -26,71 +26,20 @@
 
     <!-- Skills -->
     <ul class="Skills">
+        @foreach ($skills as $skill)
         <li class="SkillItem">
             <figure class="SkillItem-photo">
-                <img class="SkillItem-image" src="" alt="Skill name" />
+                <img class="SkillItem-image" src="" alt="{{ $skill->name }}" />
             </figure>
 
             <h2 class="SkillItem-title">
-                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
+                <a href="/skills/{{ $skill->id }}" class="SkillItem-link">{{ $skill->name }}</a>
             </h2>
 
             <span class="SkillItem-seriesCount">{Skill series count}</span>
             <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
         </li>
-
-        <li class="SkillItem">
-            <figure class="SkillItem-photo">
-                <img class="SkillItem-image" src="" alt="Skill name" />
-            </figure>
-
-            <h2 class="SkillItem-title">
-                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
-            </h2>
-
-            <span class="SkillItem-seriesCount">{Skill series count}</span>
-            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
-        </li>
-
-        <li class="SkillItem">
-            <figure class="SkillItem-photo">
-                <img class="SkillItem-image" src="" alt="Skill name" />
-            </figure>
-
-            <h2 class="SkillItem-title">
-                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
-            </h2>
-
-            <span class="SkillItem-seriesCount">{Skill series count}</span>
-            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
-        </li>
-
-        <li class="SkillItem">
-            <figure class="SkillItem-photo">
-                <img class="SkillItem-image" src="" alt="Skill name" />
-            </figure>
-
-            <h2 class="SkillItem-title">
-                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
-            </h2>
-
-            <span class="SkillItem-seriesCount">{Skill series count}</span>
-            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
-        </li>
-
-        <li class="SkillItem">
-            <figure class="SkillItem-photo">
-                <img class="SkillItem-image" src="" alt="Skill name" />
-            </figure>
-
-            <h2 class="SkillItem-title">
-                <a href="/skills/1" class="SkillItem-link">{Skill title}</a>
-            </h2>
-
-            <span class="SkillItem-seriesCount">{Skill series count}</span>
-            <span class="SkillItem-lessonsCount">{Skill lessons count}</span>
-        </li>
-
+        @endforeach
     </ul>
     <!-- /Skills -->
 

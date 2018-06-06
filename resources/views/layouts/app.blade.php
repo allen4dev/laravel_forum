@@ -46,10 +46,10 @@
             <nav class="Navigation">
                 <ul class="Navigation-list">
                     <li class="Navigation-item">
-                        <a href="#" class="Navigation-link">Sign in</a>
+                        <a href="/login" class="Navigation-link">Sign in</a>
                     </li>
                     <li class="Navigation-item">
-                        <a href="#" class="Navigation-link">Sign up</a>
+                        <a href="/register" class="Navigation-link">Sign up</a>
                     </li>
                 </ul>
             </nav>
