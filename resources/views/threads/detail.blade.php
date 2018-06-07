@@ -66,6 +66,7 @@
 
       <!-- ReplyList -->
       <ul class="ReplyList">
+        @forelse ($thread->replies as $reply)
         <li class="Reply">
           <header class="Reply-heading">
             <figure class="Avatar">
@@ -93,118 +94,9 @@
             {More ReplyList Here}
           </footer>
         </li>
-
-        <li class="Reply">
-          <header class="Reply-heading">
-            <figure class="Avatar">
-              <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
-            </figure>
-
-            <section class="Reply-details">
-              <h4 class="Reply-username">
-                <a href="/users/1" class="Reply-userlink">{Username}</a>
-              </h4>
-
-              <p class="Reply-body">
-                {Reply body}
-              </p>
-            </section>
-          </header>
-
-          <section class="Reply-meta">
-            <p>
-              {Reply meta information (photos, code examples, etc)}
-            </p>
-          </section>
-
-          <footer class="Reply-responses">
-            {More ReplyList Here}
-          </footer>
-        </li>
-
-        <li class="Reply">
-          <header class="Reply-heading">
-            <figure class="Avatar">
-              <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
-            </figure>
-
-            <section class="Reply-details">
-              <h4 class="Reply-username">
-                <a href="/users/1" class="Reply-userlink">{Username}</a>
-              </h4>
-
-              <p class="Reply-body">
-                {Reply body}
-              </p>
-            </section>
-          </header>
-
-          <section class="Reply-meta">
-            <p>
-              {Reply meta information (photos, code examples, etc)}
-            </p>
-          </section>
-
-          <footer class="Reply-responses">
-            {More ReplyList Here}
-          </footer>
-        </li>
-
-        <li class="Reply">
-          <header class="Reply-heading">
-            <figure class="Avatar">
-              <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
-            </figure>
-
-            <section class="Reply-details">
-              <h4 class="Reply-username">
-                <a href="/users/1" class="Reply-userlink">{Username}</a>
-              </h4>
-
-              <p class="Reply-body">
-                {Reply body}
-              </p>
-            </section>
-          </header>
-
-          <section class="Reply-meta">
-            <p>
-              {Reply meta information (photos, code examples, etc)}
-            </p>
-          </section>
-
-          <footer class="Reply-responses">
-            {More ReplyList Here}
-          </footer>
-        </li>
-
-        <li class="Reply">
-          <header class="Reply-heading">
-            <figure class="Avatar">
-              <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
-            </figure>
-
-            <section class="Reply-details">
-              <h4 class="Reply-username">
-                <a href="/users/1" class="Reply-userlink">{Username}</a>
-              </h4>
-
-              <p class="Reply-body">
-                {Reply body}
-              </p>
-            </section>
-          </header>
-
-          <section class="Reply-meta">
-            <p>
-              {Reply meta information (photos, code examples, etc)}
-            </p>
-          </section>
-
-          <footer class="Reply-responses">
-            {More ReplyList Here}
-          </footer>
-        </li>
+        @empty
+        <p class="Message">This thread has no replies.</p>
+        @endforelse
       </ul>
       <!-- /ReplyList -->
     </section>
