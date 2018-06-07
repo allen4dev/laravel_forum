@@ -79,7 +79,7 @@
               </h4>
 
               <p class="Reply-body">
-                {Reply body}
+                {{ $reply->body }}
               </p>
             </section>
           </header>
