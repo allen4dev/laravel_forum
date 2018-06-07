@@ -28,4 +28,15 @@ class ReadThreadsTest extends TestCase
         
         $this->assertEquals($latest->title, $todayThread->title);
     }
+
+    /** @test */
+    public function a_user_can_see_a_single_thread()
+    {
+        $thread = factory(Thread::class)->create();
+
+        $this->get("/threads/{$thread->id}")
+            ->assertSee($thread->title)
+            ->assertSee($thread->description)
+            ->assertSee($thread->body);
+    }
 }

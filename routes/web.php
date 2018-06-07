@@ -13,9 +13,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-// Route::get('/threads/{thread}', function () {
-//     return view('threads.detail');
-// })->name('threads.detail');
+Route::get('/threads/{thread}', 'ThreadController@show')->name('threads.detail');
 
 // Route::get('/users/{user}', function () {
 //     return view('users.profile');
