@@ -59,14 +59,14 @@
             @foreach ($threads as $thread)
             <article class="ThreadGridItem">
                 <header class="ThreadGridItem-heading">
-                    <a href="/threads/{{$thread->id}}" class="ThreadGridItem-skillLink">
+                    <a href="/skills/1" class="ThreadGridItem-skillLink">
                         <span class="ThreadGridItem-skillName">{Thread skill}</span>
                     </a>
                 </header>
 
                 <section class="ThreadGridItem-body">
                     <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
+                        <a href="{{ $thread->path() }}" class="ThreadGridItem-link">
                             {{ $thread->title }}
                         </a>
                     </h4>
