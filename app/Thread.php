@@ -11,6 +11,11 @@ class Thread extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function skill()
+    {
+        return $this->belongsTo(Skill::class);
+    }
+
     public function path()
     {
         return '/threads/' . $this->id;

@@ -9,8 +9,13 @@
 
     <section class="Thread-headingContent">
       <div class="Thread-info">
-        <span class="Thread-skill">{Thread Skill}</span>
-        <span class="Thread-author">{Thread author}</span>
+        <span class="Thread-skill">
+          <strong>
+              {{ $thread->skill->name }}</span>
+        </strong> |
+        <span class="Thread-author">
+          {{ $thread->user->name }}
+        </span>
       </div>
 
       <!-- Thread-description -->

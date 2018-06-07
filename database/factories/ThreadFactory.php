@@ -7,6 +7,9 @@ $factory->define(App\Thread::class, function (Faker $faker) {
         'user_id' => function () {
             return factory(App\User::class)->create()->id;
         },
+        'skill_id' => function () {
+            return factory(App\Skill::class)->create()->id;
+        },
         "title" => $faker->sentence,
         "description" => $faker->paragraph,
         "body" => $faker->text,

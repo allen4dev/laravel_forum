@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Thread;
 use App\User;
+use App\Skill;
 
 class ThreadTest extends TestCase
 {
@@ -27,5 +28,13 @@ class ThreadTest extends TestCase
         $thread = factory(Thread::class)->create();
         
         $this->assertInstanceOf(User::class, $thread->user);
+    }
+
+    /** @test */
+    public function a_thread_belongs_to_a_skill()
+    {
+        $thread = factory(Thread::class)->create();
+
+        $this->assertInstanceOf(Skill::class, $thread->skill);
     }
 }
