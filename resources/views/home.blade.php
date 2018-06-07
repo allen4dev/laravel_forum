@@ -56,9 +56,10 @@
     <!-- ThreadGrid -->
     <section class="ThreadGrid">
         <article class="ThreadGrid-items">
+            @foreach ($threads as $thread)
             <article class="ThreadGridItem">
                 <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
+                    <a href="/threads/{{$thread->id}}" class="ThreadGridItem-skillLink">
                         <span class="ThreadGridItem-skillName">{Thread skill}</span>
                     </a>
                 </header>
@@ -66,7 +67,7 @@
                 <section class="ThreadGridItem-body">
                     <h4 class="ThreadGridItem-title">
                         <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
+                            {{ $thread->title }}
                         </a>
                     </h4>
                 </section>
@@ -78,173 +79,10 @@
                     </div>
                 </footer>
             </article>
-
-            <article class="ThreadGridItem">
-                <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
-                        <span class="ThreadGridItem-skillName">{Thread skill}</span>
-                    </a>
-                </header>
-
-                <section class="ThreadGridItem-body">
-                    <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
-                        </a>
-                    </h4>
-                </section>
-
-                <footer class="ThreadGridItem-footer">
-                    <div class="ThreadGridItem-info">
-                        <span class="ThreadGridItem-count ThreadGridItem-lessonsCount">{Thread lessons count}</span>
-                        <span class="ThreadGridItem-count ThreadGridItem-level">{Thread level}</span>
-                    </div>
-                </footer>
-            </article>
-
-            <article class="ThreadGridItem">
-                <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
-                        <span class="ThreadGridItem-skillName">{Thread skill}</span>
-                    </a>
-                </header>
-
-                <section class="ThreadGridItem-body">
-                    <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
-                        </a>
-                    </h4>
-                </section>
-
-                <footer class="ThreadGridItem-footer">
-                    <div class="ThreadGridItem-info">
-                        <span class="ThreadGridItem-count ThreadGridItem-lessonsCount">{Thread lessons count}</span>
-                        <span class="ThreadGridItem-count ThreadGridItem-level">{Thread level}</span>
-                    </div>
-                </footer>
-            </article>
-
-            <article class="ThreadGridItem">
-                <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
-                        <span class="ThreadGridItem-skillName">{Thread skill}</span>
-                    </a>
-                </header>
-
-                <section class="ThreadGridItem-body">
-                    <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
-                        </a>
-                    </h4>
-                </section>
-
-                <footer class="ThreadGridItem-footer">
-                    <div class="ThreadGridItem-info">
-                        <span class="ThreadGridItem-count ThreadGridItem-lessonsCount">{Thread lessons count}</span>
-                        <span class="ThreadGridItem-count ThreadGridItem-level">{Thread level}</span>
-                    </div>
-                </footer>
-            </article>
-
-            <article class="ThreadGridItem">
-                <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
-                        <span class="ThreadGridItem-skillName">{Thread skill}</span>
-                    </a>
-                </header>
-
-                <section class="ThreadGridItem-body">
-                    <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
-                        </a>
-                    </h4>
-                </section>
-
-                <footer class="ThreadGridItem-footer">
-                    <div class="ThreadGridItem-info">
-                        <span class="ThreadGridItem-count ThreadGridItem-lessonsCount">{Thread lessons count}</span>
-                        <span class="ThreadGridItem-count ThreadGridItem-level">{Thread level}</span>
-                    </div>
-                </footer>
-            </article>
-
-            <article class="ThreadGridItem">
-                <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
-                        <span class="ThreadGridItem-skillName">{Thread skill}</span>
-                    </a>
-                </header>
-
-                <section class="ThreadGridItem-body">
-                    <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
-                        </a>
-                    </h4>
-                </section>
-
-                <footer class="ThreadGridItem-footer">
-                    <div class="ThreadGridItem-info">
-                        <span class="ThreadGridItem-count ThreadGridItem-lessonsCount">{Thread lessons count}</span>
-                        <span class="ThreadGridItem-count ThreadGridItem-level">{Thread level}</span>
-                    </div>
-                </footer>
-            </article>
-
-            <article class="ThreadGridItem">
-                <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
-                        <span class="ThreadGridItem-skillName">{Thread skill}</span>
-                    </a>
-                </header>
-
-                <section class="ThreadGridItem-body">
-                    <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
-                        </a>
-                    </h4>
-                </section>
-
-                <footer class="ThreadGridItem-footer">
-                    <div class="ThreadGridItem-info">
-                        <span class="ThreadGridItem-count ThreadGridItem-lessonsCount">{Thread lessons count}</span>
-                        <span class="ThreadGridItem-count ThreadGridItem-level">{Thread level}</span>
-                    </div>
-                </footer>
-            </article>
-
-            <article class="ThreadGridItem">
-                <header class="ThreadGridItem-heading">
-                    <a href="#" class="ThreadGridItem-skillLink">
-                        <span class="ThreadGridItem-skillName">{Thread skill}</span>
-                    </a>
-                </header>
-
-                <section class="ThreadGridItem-body">
-                    <h4 class="ThreadGridItem-title">
-                        <a href="/threads/1" class="ThreadGridItem-link">
-                            {Thread title}
-                        </a>
-                    </h4>
-                </section>
-
-                <footer class="ThreadGridItem-footer">
-                    <div class="ThreadGridItem-info">
-                        <span class="ThreadGridItem-count ThreadGridItem-lessonsCount">{Thread lessons count}</span>
-                        <span class="ThreadGridItem-count ThreadGridItem-level">{Thread level}</span>
-                    </div>
-                </footer>
-            </article>
-
+            @endforeach
         </article>
 
-        <a class="ThreadGrid-button" href="#" />> Show more
-        </a>
-        </a>
+        <a class="ThreadGrid-button" href="#" />Show more</a>
         <!-- /ThreadGrid -->
     </section>
     <!-- /ThreadGrid -->

@@ -6,16 +6,26 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use App\Thread;
+
 class ReadThreadsTest extends TestCase
 {
+    use RefreshDatabase;
+
     /** @test */
     public function a_user_can_see_the_latest_threads()
     {
-        // Given we have one thread from now and other from the past week
+        $todayThread = factory(Thread::class)->create();
+        $lastWeekThread = factory(Thread::class)->create();
         
-        // When a user visits "/"
+        $lastWeekThread->created_at->subWeek();
         
-        // Then he should see both threads ordered by latest date
-        $this->assertTrue(true);
+        $this->get('/')
+            ->assertSee($todayThread->title)
+            ->assertSee($lastWeekThread->title);
+        
+        $latest = Thread::latest()->first();
+        
+        $this->assertEquals($latest->title, $todayThread->title);
     }
 }
