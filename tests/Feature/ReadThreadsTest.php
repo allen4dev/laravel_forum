@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use App\Serie;
 use App\Thread;
 
 class ReadThreadsTest extends TestCase
@@ -38,5 +39,20 @@ class ReadThreadsTest extends TestCase
             ->assertSee($thread->title)
             ->assertSee($thread->description)
             ->assertSee($thread->body);
+    }
+
+    /** @test */
+    public function a_user_can_see_all_the_threads_related_to_a_serie()
+    {
+        $serie = factory(Serie::class)->create();
+        
+        $serieThread = factory(Thread::class)->create([
+            "serie_id" => $serie->id,
+        ]);
+
+        $normalThread = factory(Thread::class)->create();
+
+        $this->get("/series/{$serie->id}")
+            ->assertSee($serieThread->title);
     }
 }

@@ -37,6 +37,7 @@
   <section class="Serie-body">
     <!-- ThreadList -->
     <ul class="ThreadList">
+      @foreach ($serie->threads as $thread)
       <li class="ThreadListItem">
         <div class="ThreadListItem-episode">
           <span class="ThreadListItem-number">01</span>
@@ -45,17 +46,18 @@
         <section class="ThreadListItem-content">
           <header class="ThreadListItem-heading">
             <h2 class="ThreadListItem-title">
-              <a href="/threads/1" class="ThreadListItem-link">
-                {Thread title}
-              </a>
+              <a href="{{ $thread->path() }}" class="ThreadListItem-link">
+                  {{ $thread->title }}
+                </a>
             </h2>
           </header>
 
           <p class="ThreadListItem-description">
-            {Thread description}
+            {{ $thread->description }}
           </p>
         </section>
       </li>
+      @endforeach
     </ul>
     <!-- /ThreadList -->
   </section>
