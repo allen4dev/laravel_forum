@@ -22,10 +22,11 @@
 
   <!-- Series -->
   <section class="Series">
+    @forelse ($skill->series as $serie)
     <article class="SerieItem">
       <header class="SerieItem-heading">
         <a href="#" class="Serie-skillLink">
-          <span class="Serie-skillName">{Serie skill}</span>
+          <span class="Serie-skillName">{{ $skill->name}}</span>
         </a>
 
         <span class="SerieItem-step">Step 1</span>
@@ -34,193 +35,21 @@
       <section class="SerieItem-body">
         <h4 class="Serie-title">
           <a href="/series/1" class="SerieItem-link">
-            {Serie title}
-          </a>
+              {{ $serie->name}}
+            </a>
         </h4>
       </section>
 
       <footer class="SerieItem-footer">
         <div class="Serie-info">
           <span class="Serie-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
+          <span class="SerieItem-count Serie-level">{{ $serie->level }}</span>
         </div>
       </footer>
     </article>
-
-    <article class="SerieItem">
-      <header class="SerieItem-heading">
-        <a href="#" class="SerieItem-skillLink">
-            <span class="SerieItem-skillName">{Serie skill}</span>
-          </a>
-
-        <span class="SerieItem-step">Step 1</span>
-      </header>
-
-      <section class="SerieItem-body">
-        <h4 class="SerieItem-title">
-          <a href="/series/1" class="SerieItem-link">
-              {Serie title}
-            </a>
-        </h4>
-      </section>
-
-      <footer class="SerieItem-footer">
-        <div class="SerieItem-info">
-          <span class="SerieItem-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
-        </div>
-      </footer>
-    </article>
-
-    <article class="SerieItem">
-      <header class="SerieItem-heading">
-        <a href="#" class="SerieItem-skillLink">
-              <span class="SerieItem-skillName">{Serie skill}</span>
-            </a>
-
-        <span class="SerieItem-step">Step 1</span>
-      </header>
-
-      <section class="SerieItem-body">
-        <h4 class="SerieItem-title">
-          <a href="/series/1" class="SerieItem-link">
-                {Serie title}
-              </a>
-        </h4>
-      </section>
-
-      <footer class="SerieItem-footer">
-        <div class="SerieItem-info">
-          <span class="SerieItem-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
-        </div>
-      </footer>
-    </article>
-
-    <article class="SerieItem">
-      <header class="SerieItem-heading">
-        <a href="#" class="SerieItem-skillLink">
-                <span class="SerieItem-skillName">{Serie skill}</span>
-              </a>
-
-        <span class="SerieItem-step">Step 1</span>
-      </header>
-
-      <section class="SerieItem-body">
-        <h4 class="SerieItem-title">
-          <a href="/series/1" class="SerieItem-link">
-                  {Serie title}
-                </a>
-        </h4>
-      </section>
-
-      <footer class="SerieItem-footer">
-        <div class="SerieItem-info">
-          <span class="SerieItem-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
-        </div>
-      </footer>
-    </article>
-
-    <article class="SerieItem">
-      <header class="Serie-heading">
-        <a href="#" class="Serie-skillLink">
-                  <span class="Serie-skillName">{Serie skill}</span>
-                </a>
-
-        <span class="Serie-step">Step 1</span>
-      </header>
-
-      <section class="Serie-body">
-        <h4 class="Serie-title">
-          <a href="/series/1" class="Serie-link">
-            {Serie title}
-          </a>
-        </h4>
-      </section>
-
-      <footer class="Serie-footer">
-        <div class="Serie-info">
-          <span class="Serie-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
-        </div>
-      </footer>
-    </article>
-
-    <article class="SerieItem">
-      <header class="SerieItem-heading">
-        <a href="#" class="SerieItem-skillLink">
-                    <span class="SerieItem-skillName">{Serie skill}</span>
-                  </a>
-
-        <span class="SerieItem-step">Step 1</span>
-      </header>
-
-      <section class="SerieItem-body">
-        <h4 class="SerieItem-title">
-          <a href="/series/1" class="SerieItem-link">
-              {Serie title}
-            </a>
-        </h4>
-      </section>
-
-      <footer class="SerieItem-footer">
-        <div class="SerieItem-info">
-          <span class="SerieItem-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
-        </div>
-      </footer>
-    </article>
-
-    <article class="SerieItem">
-      <header class="SerieItem-heading">
-        <a href="#" class="SerieItem-skillLink">
-                      <span class="SerieItem-skillName">{Serie skill}</span>
-                    </a>
-
-        <span class="SerieItem-step">Step 1</span>
-      </header>
-
-      <section class="SerieItem-body">
-        <h4 class="SerieItem-title">
-          <a href="/series/1" class="SerieItem-link">
-                {Serie title}
-              </a>
-        </h4>
-      </section>
-
-      <footer class="SerieItem-footer">
-        <div class="SerieItem-info">
-          <span class="SerieItem-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
-        </div>
-      </footer>
-    </article>
-
-    <article class="SerieItem">
-      <header class="SerieItem-heading">
-        <a href="#" class="SerieItem-skillLink">
-                        <span class="SerieItem-skillName">{Serie skill}</span>
-                      </a>
-
-        <span class="SerieItem-step">Step 1</span>
-      </header>
-
-      <section class="SerieItem-body">
-        <h4 class="SerieItem-title">
-          <a href="/series/1" class="SerieItem-link">
-                  {Serie title}
-                </a>
-        </h4>
-      </section>
-
-      <footer class="SerieItem-footer">
-        <div class="SerieItem-info">
-          <span class="SerieItem-count Serie-lessonsCount">{Serie lessons count}</span>
-          <span class="SerieItem-count Serie-level">{Serie level}</span>
-        </div>
-      </footer>
-    </article>
+    @empty
+    <p class="message">This skill does not have series.</p>
+    @endforelse
   </section>
   <!-- /Series -->
 </section>

@@ -20,7 +20,7 @@ class ReadRepliesTest extends TestCase
         $replyOne = factory(Reply::class)->create([ "thread_id" => $thread->id ]);
         $replyTwo = factory(Reply::class)->create([ "thread_id" => $thread->id ]);
         
-        $this->get("/threads/{$thread->id}")
+        $this->get($thread->path())
             ->assertSee($replyOne->body)
             ->assertSee($replyTwo->body);
     }
