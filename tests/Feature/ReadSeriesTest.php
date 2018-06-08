@@ -33,7 +33,7 @@ class ReadSeriesTest extends TestCase
     {
         $serie = factory(Serie::class)->create();
 
-        $this->get("/series/{$serie->id}")
+        $this->get($serie->path())
             ->assertSee($serie->name);
     }
 }

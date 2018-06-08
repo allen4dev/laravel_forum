@@ -52,7 +52,7 @@ class ReadThreadsTest extends TestCase
 
         $normalThread = factory(Thread::class)->create();
 
-        $this->get("/series/{$serie->id}")
+        $this->get($serie->path())
             ->assertSee($serieThread->title);
     }
 }
