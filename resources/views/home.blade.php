@@ -33,7 +33,7 @@
             </figure>
 
             <h2 class="SkillItem-title">
-                <a href="/skills/{{ $skill->id }}" class="SkillItem-link">{{ $skill->name }}</a>
+                <a href="{{ $skill->path() }}" class="SkillItem-link">{{ $skill->name }}</a>
             </h2>
 
             <span class="SkillItem-seriesCount">{Skill series count}</span>

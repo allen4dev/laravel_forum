@@ -31,7 +31,7 @@ class ReadSkillsTest extends TestCase
     {
         $skill = factory(Skill::class)->create();
 
-        $this->get("/skills/{$skill->id}")
+        $this->get($skill->path())
             ->assertSee($skill->name)
             ->assertSee($skill->description);
     }
