@@ -12,21 +12,18 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-
 Route::get('/threads/{thread}', 'ThreadController@show')->name('threads.detail');
 
-// Route::get('/users/{user}', function () {
-//     return view('users.profile');
-// })->name('users.profile');
-
 Route::get('/skills/{skill}', 'SkillController@show')->name('skills.detail');
+
+Route::get('/series/{serie}', 'SerieController@show')->name('series.detail');
 
 // Route::get('/search', function () {
 //     return view('search');
 // });
 
-// Route::get('/series/{serie}', function () {
-//     return view('series.detail');
-// });
-
+// Route::get('/users/{user}', function () {
+//     return view('users.profile');
+// })->name('users.profile');
+  
 Auth::routes();

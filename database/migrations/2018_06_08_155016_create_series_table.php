@@ -18,6 +18,7 @@ class CreateSeriesTable extends Migration
             $table->unsignedInteger('skill_id');
             $table->string('name');
             $table->string('level');
+            $table->text('description');
             $table->timestamps();
         });
     }

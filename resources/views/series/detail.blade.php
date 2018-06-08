@@ -6,14 +6,13 @@
     <!-- Serie-details -->
     <section class="Serie-details">
       <header class="Serie-detailsHeader">
-        <span class="Serie-level">{Serie level}</span>
-        <h1 class="Serie-title">{Serie title}</h1>
+        <span class="Serie-level">{{ $serie->level }}</span>
+        <h1 class="Serie-title">{{ $serie->name }}</h1>
       </header>
 
       <section class="Serie-description">
         <p class="Serie-descriptionText">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam doloribus facilis sit eligendi rerum numquam maxime unde
-          nisi pariatur, voluptates sed odit ab. Totam quisquam odit, quos corrupti et omnis?
+          {{ $serie->description }}
         </p>
       </section>
 
@@ -28,7 +27,7 @@
 
     <!-- Serie-photo -->
     <figure class="Serie-photo">
-      <img src="" alt="{Serie name}" class="Serie-image" />
+      <img src="" alt="{{ $serie->name }}" class="Serie-image" />
     </figure>
     <!-- /Serie-photo -->
   </header>

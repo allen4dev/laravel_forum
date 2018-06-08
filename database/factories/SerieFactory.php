@@ -8,6 +8,7 @@ $factory->define(App\Serie::class, function (Faker $faker) {
             return factory(App\Skill::class)->create();
         },
         "name" => $faker->sentence,
+        "description" => $faker->text,
         "level" => $faker->randomElement(['Beginner', 'Intermediate', 'Advanced']),
     ];
 });

@@ -27,4 +27,13 @@ class ReadSeriesTest extends TestCase
         $this->get($laravelSkill->path())
             ->assertSee($laravelSerie->name);
     }
+
+    /** @test */
+    public function a_user_can_see_a_single_serie()
+    {
+        $serie = factory(Serie::class)->create();
+
+        $this->get("/series/{$serie->id}")
+            ->assertSee($serie->name);
+    }
 }
