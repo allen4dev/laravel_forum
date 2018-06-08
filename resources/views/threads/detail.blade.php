@@ -70,12 +70,12 @@
         <li class="Reply">
           <header class="Reply-heading">
             <figure class="Avatar">
-              <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
+              <img class="Avatar-photo" src="{User photo}" alt="{{ $reply->user->name }}" />
             </figure>
 
             <section class="Reply-details">
               <h4 class="Reply-username">
-                <a href="/users/1" class="Reply-userlink">{Username}</a>
+                <a href="/users/{{ $reply->id }}" class="Reply-userlink">{{ $reply->user->name }}</a>
               </h4>
 
               <p class="Reply-body">
