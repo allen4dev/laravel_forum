@@ -6,17 +6,16 @@
     <section class="Skill-details">
       <header class="Skill-detailsHeading">
         <span class="Skill-tag tag">Skill</span>
-        <h2 class="Skill-title">Laravel</h2>
+        <h2 class="Skill-title">{{ $skill->name }}</h2>
       </header>
 
       <p class="Skill-description">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure mollitia error quae magni totam, delectus voluptates sit velit
-        itaque unde expedita assumenda dolorum, optio minus sapiente. Reprehenderit est explicabo laudantium.
+        {{ $skill->description }}
       </p>
     </section>
 
     <figure class="Skill-photo">
-      <img src="" alt="{Skill name}" class="Skill-image" />
+      <img src="" alt="{{ $skill->name }}" class="Skill-image" />
     </figure>
   </header>
   <!-- /Skill-heading -->

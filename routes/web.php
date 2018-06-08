@@ -19,9 +19,7 @@ Route::get('/threads/{thread}', 'ThreadController@show')->name('threads.detail')
 //     return view('users.profile');
 // })->name('users.profile');
 
-// Route::get('/skills/{skill}', function () {
-//     return view('skills.detail');
-// })->name('skills.detail');
+Route::get('/skills/{skill}', 'SkillController@show')->name('skills.detail');
 
 // Route::get('/search', function () {
 //     return view('search');

@@ -34,7 +34,7 @@ class ReadThreadsTest extends TestCase
     {
         $thread = factory(Thread::class)->create();
 
-        $this->get("/threads/{$thread->id}")
+        $this->get($thread->path())
             ->assertSee($thread->title)
             ->assertSee($thread->description)
             ->assertSee($thread->body);

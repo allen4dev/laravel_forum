@@ -25,4 +25,14 @@ class ReadSkillsTest extends TestCase
             ->assertSee($laravel->name)
             ->assertSee($react->name);
     }
+
+    /** @test */
+    public function a_user_can_see_a_single_skill()
+    {
+        $skill = factory(Skill::class)->create();
+
+        $this->get("/skills/{$skill->id}")
+            ->assertSee($skill->name)
+            ->assertSee($skill->description);
+    }
 }
