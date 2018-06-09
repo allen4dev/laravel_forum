@@ -8,6 +8,11 @@ use App\Thread;
 
 class ThreadController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
+
     public function show(Thread $thread)
     {
         return view('threads.detail', compact('thread'));
@@ -15,14 +20,7 @@ class ThreadController extends Controller
 
     public function store(Request $request)
     {
-        $thread = Thread::create([
-            'user_id'     => $request->user_id,
-            'skill_id'    => $request->skill_id,
-            'serie_id'    => $request->serie_id,
-            'title'       => $request->title,
-            'description' => $request->description,
-            'body'        => $request->body,
-        ]);
+        $thread = auth()->user()->publishThread($request->thread);
 
         return redirect($thread->path());
     }

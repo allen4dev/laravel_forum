@@ -31,4 +31,16 @@ class User extends Authenticatable
     {
         return "/users/" . $this->id;
     }
+
+    public function publishThread($thread)
+    {
+        return Thread::create([
+            'user_id'     => $this->id,
+            'skill_id'    => $thread['skill_id'],
+            'serie_id'    => $thread['serie_id'],
+            'title'       => $thread['title'],
+            'description' => $thread['description'],
+            'body'        => $thread['body'],
+        ]);
+    }
 }
