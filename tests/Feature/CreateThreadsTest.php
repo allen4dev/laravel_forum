@@ -30,15 +30,29 @@ class CreateThreadsTest extends TestCase
     public function an_authenticaded_user_can_create_threads()
     {
         $this->be(factory(User::class)->create());
-        
+
         $thread = factory(Thread::class)->raw([ 'user_id' => auth()->id() ]);
 
         $this->post('/threads', ['thread' => $thread])
             ->assertRedirect(Thread::first()->path());
 
+
         $this->assertDatabaseHas('threads', [
             "title" => $thread['title'],
             "user_id" => auth()->id(),
         ]);
+    }
+
+    /** @test */
+    public function a_thread_requires_a_title()
+    {
+        $this->be(factory(User::class)->create());
+
+        $invalidThread = factory(Thread::class)->raw([
+            'title' => null,
+        ]);
+
+        $this->post('/threads', [ 'thread' => $invalidThread ])
+            ->assertSessionHasErrors('thread.title'); 
     }
 }

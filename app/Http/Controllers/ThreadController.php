@@ -18,9 +18,13 @@ class ThreadController extends Controller
         return view('threads.detail', compact('thread'));
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        $thread = auth()->user()->publishThread($request->thread);
+        request()->validate([
+            'thread.title' => 'required',
+        ]);
+
+        $thread = auth()->user()->publishThread(request()->thread);
 
         return redirect($thread->path());
     }
