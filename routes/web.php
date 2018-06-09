@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/threads/{thread}', 'ThreadController@show')->name('threads.detail');
+Route::post('/threads', 'ThreadController@store');
 
 Route::get('/skills/{skill}', 'SkillController@show')->name('skills.detail');
 
