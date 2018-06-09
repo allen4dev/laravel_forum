@@ -17,7 +17,7 @@ class ReadProfileTest extends TestCase
     {
         $user = factory(User::class)->create();
 
-        $this->get("/users/{$user->id}")
+        $this->get($user->path())
             ->assertSee($user->username)
             ->assertSee($user->email)
             ->assertSee($user->job_title);
