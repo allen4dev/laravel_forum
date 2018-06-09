@@ -18,12 +18,11 @@ Route::get('/skills/{skill}', 'SkillController@show')->name('skills.detail');
 
 Route::get('/series/{serie}', 'SerieController@show')->name('series.detail');
 
+Route::get('/users/{user}', 'UserController@show')->name('users.profile');
+
 // Route::get('/search', function () {
 //     return view('search');
 // });
 
-// Route::get('/users/{user}', function () {
-//     return view('users.profile');
-// })->name('users.profile');
   
 Auth::routes();

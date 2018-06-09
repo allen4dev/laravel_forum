@@ -4,15 +4,15 @@
   <!-- Profile-heading -->
   <header class="Profile-heading">
     <figure class="Avatar">
-      <img class="Avatar-photo" src="{User photo}" alt="{User name}" />
+      <img class="Avatar-photo" src="{User photo}" alt="{{ $user->name }}" />
     </figure>
 
     <section class="Profile-headingContent">
       <!-- Profile-userInfo -->
       <section class="Profile-info">
-        <h2 class="Profile-username">{Username}</h2>
-        <h3 class="Profile-occupation">{User occupation}</h3>
-        <h4 class="Profile-location">{User location}</h4>
+        <h2 class="Profile-username">{{ $user->username }}</h2>
+        <h3 class="Profile-occupation">{{ $user->job_title }}</h3>
+        <h4 class="Profile-location">{{ $user->email }}</h4>
       </section>
       <!-- /Profile-userInfo -->
 
