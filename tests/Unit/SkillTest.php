@@ -17,4 +17,15 @@ class SkillTest extends TestCase
 
         $this->assertEquals("/skills/{$skill->id}", $skill->path());
     }
+
+    /** @test */
+    public function a_skill_has_many_series()
+    {
+        $skill = factory(Skill::class)->create();
+
+        $this->assertInstanceOf(
+            'Illuminate\Database\Eloquent\Collection',
+            $skill->series
+        );
+    }
 }

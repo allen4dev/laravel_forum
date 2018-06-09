@@ -21,7 +21,10 @@ class ThreadController extends Controller
     public function store()
     {
         request()->validate([
-            'thread.title' => 'required',
+            'thread.title' => 'required|min:5',
+            'thread.description' => 'required|min:10',
+            'thread.body' => 'required',
+            'thread.skill_id' => 'required',
         ]);
 
         $thread = auth()->user()->publishThread(request()->thread);

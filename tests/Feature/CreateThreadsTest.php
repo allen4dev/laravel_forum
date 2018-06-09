@@ -55,4 +55,56 @@ class CreateThreadsTest extends TestCase
         $this->post('/threads', [ 'thread' => $invalidThread ])
             ->assertSessionHasErrors('thread.title'); 
     }
+
+    /** @test */
+    public function a_thread_requires_a_description()
+    {
+        $this->be(factory(User::class)->create());
+
+        $invalidThread = factory(Thread::class)->raw([
+            'description' => null,
+        ]);
+
+        $this->post('/threads', [ 'thread' => $invalidThread ])
+            ->assertSessionHasErrors('thread.description'); 
+    }
+
+    /** @test */
+    public function a_thread_requires_a_body()
+    {
+        $this->be(factory(User::class)->create());
+
+        $invalidThread = factory(Thread::class)->raw([
+            'body' => null,
+        ]);
+
+        $this->post('/threads', [ 'thread' => $invalidThread ])
+            ->assertSessionHasErrors('thread.body'); 
+    }
+
+    /** @test */
+    public function a_thread_is_related_to_a_skill()
+    {
+        $this->be(factory(User::class)->create());
+
+        $invalidThread = factory(Thread::class)->raw([
+            'skill_id' => null,
+        ]);
+
+        $this->post('/threads', [ 'thread' => $invalidThread ])
+            ->assertSessionHasErrors('thread.skill_id'); 
+    }
+
+    /** @test */
+    public function a_thread_can_optionally_be_related_to_a_serie()
+    {
+        $this->be(factory(User::class)->create());
+
+        $invalidThread = factory(Thread::class)->raw([
+            'serie_id' => null,
+        ]);
+
+        $this->post('/threads', [ 'thread' => $invalidThread ])
+            ->assertRedirect(Thread::first()->path()); 
+    }
 }
