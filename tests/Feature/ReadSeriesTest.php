@@ -16,13 +16,13 @@ class ReadSeriesTest extends TestCase
     /** @test */
     public function a_user_can_see_all_series_related_to_a_skill()
     {
-        $laravelSkill = factory(Skill::class)->create();
+        $laravelSkill = create(Skill::class);
         
-        $laravelSerie = factory(Serie::class)->create([
-            "skill_id" => $laravelSkill->id,
+        $laravelSerie = create(Serie::class, [
+            "skill_id" => $laravelSkill->id
         ]);
         
-        $reactSerie = factory(Serie::class)->create();
+        $reactSerie = create(Serie::class);
         
         $this->get($laravelSkill->path())
             ->assertSee($laravelSerie->name);
@@ -31,7 +31,7 @@ class ReadSeriesTest extends TestCase
     /** @test */
     public function a_user_can_see_a_single_serie()
     {
-        $serie = factory(Serie::class)->create();
+        $serie = create(Serie::class);
 
         $this->get($serie->path())
             ->assertSee($serie->name);

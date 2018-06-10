@@ -17,7 +17,7 @@ class ThreadTest extends TestCase
     /** @test */
     public function a_thread_knows_his_path()
     {
-        $thread = factory(Thread::class)->create();
+        $thread = create(Thread::class);
 
         $this->assertEquals($thread->path(), "/threads/{$thread->id}");
     }
@@ -25,7 +25,7 @@ class ThreadTest extends TestCase
     /** @test */
     public function a_thread_belongs_to_a_user()
     {
-        $thread = factory(Thread::class)->create();
+        $thread = create(Thread::class);
         
         $this->assertInstanceOf(User::class, $thread->user);
     }
@@ -33,7 +33,7 @@ class ThreadTest extends TestCase
     /** @test */
     public function a_thread_belongs_to_a_skill()
     {
-        $thread = factory(Thread::class)->create();
+        $thread = create(Thread::class);
 
         $this->assertInstanceOf(Skill::class, $thread->skill);
     }
@@ -41,7 +41,7 @@ class ThreadTest extends TestCase
     /** @test */
     public function a_thread_has_many_replies()
     {
-        $thread = factory(Thread::class)->create();
+        $thread = create(Thread::class);
 
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',

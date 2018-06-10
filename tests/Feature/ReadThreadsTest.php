@@ -33,7 +33,7 @@ class ReadThreadsTest extends TestCase
     /** @test */
     public function a_user_can_see_a_single_thread()
     {
-        $thread = factory(Thread::class)->create();
+        $thread = create(Thread::class);
 
         $this->get($thread->path())
             ->assertSee($thread->title)
@@ -44,13 +44,13 @@ class ReadThreadsTest extends TestCase
     /** @test */
     public function a_user_can_see_all_the_threads_related_to_a_serie()
     {
-        $serie = factory(Serie::class)->create();
+        $serie = create(Serie::class);
         
-        $serieThread = factory(Thread::class)->create([
+        $serieThread = create(Thread::class, [
             "serie_id" => $serie->id,
         ]);
 
-        $normalThread = factory(Thread::class)->create();
+        $normalThread = create(Thread::class);
 
         $this->get($serie->path())
             ->assertSee($serieThread->title);

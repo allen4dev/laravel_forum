@@ -13,7 +13,7 @@ class SkillTest extends TestCase
     /** @test */
     public function a_skill_knows_his_path()
     {
-        $skill = factory(Skill::class)->create();
+        $skill = create(Skill::class);
 
         $this->assertEquals("/skills/{$skill->id}", $skill->path());
     }
@@ -21,7 +21,7 @@ class SkillTest extends TestCase
     /** @test */
     public function a_skill_has_many_series()
     {
-        $skill = factory(Skill::class)->create();
+        $skill = create(Skill::class);
 
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',

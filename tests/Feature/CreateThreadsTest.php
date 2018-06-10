@@ -16,11 +16,9 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function a_guest_can_not_create_threads()
     {
-        $user = factory(User::class)->create();
+        $user = create(User::class);
         
-        $thread = factory(Thread::class)->raw([
-            'user_id' => $user->id,
-        ]);
+        $thread = raw(Thread::class, [ 'user_id' => $user->id ]);
 
         $this->post('/threads', $thread)
             ->assertRedirect('login');
@@ -29,9 +27,9 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function an_authenticaded_user_can_create_threads()
     {
-        $this->be(factory(User::class)->create());
+        $this->signin();
 
-        $thread = factory(Thread::class)->raw([ 'user_id' => auth()->id() ]);
+        $thread = raw(Thread::class, [ 'user_id' => auth()->id() ]);
 
         $this->post('/threads', ['thread' => $thread])
             ->assertRedirect(Thread::first()->path());
@@ -46,11 +44,9 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function a_thread_requires_a_title()
     {
-        $this->be(factory(User::class)->create());
+        $this->signin();
 
-        $invalidThread = factory(Thread::class)->raw([
-            'title' => null,
-        ]);
+        $invalidThread = raw(Thread::class, [ 'title' => null ]);
 
         $this->post('/threads', [ 'thread' => $invalidThread ])
             ->assertSessionHasErrors('thread.title'); 
@@ -59,11 +55,9 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function a_thread_requires_a_description()
     {
-        $this->be(factory(User::class)->create());
+        $this->signin();
 
-        $invalidThread = factory(Thread::class)->raw([
-            'description' => null,
-        ]);
+        $invalidThread = raw(Thread::class, [ 'description' => null ]);
 
         $this->post('/threads', [ 'thread' => $invalidThread ])
             ->assertSessionHasErrors('thread.description'); 
@@ -74,9 +68,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->be(factory(User::class)->create());
 
-        $invalidThread = factory(Thread::class)->raw([
-            'body' => null,
-        ]);
+        $invalidThread = raw(Thread::class, [ 'body' => null ]);
 
         $this->post('/threads', [ 'thread' => $invalidThread ])
             ->assertSessionHasErrors('thread.body'); 
@@ -87,9 +79,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->be(factory(User::class)->create());
 
-        $invalidThread = factory(Thread::class)->raw([
-            'skill_id' => null,
-        ]);
+        $invalidThread = raw(Thread::class, [ 'skill_id' => null ]);
 
         $this->post('/threads', [ 'thread' => $invalidThread ])
             ->assertSessionHasErrors('thread.skill_id'); 
@@ -100,9 +90,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->be(factory(User::class)->create());
 
-        $invalidThread = factory(Thread::class)->raw([
-            'serie_id' => null,
-        ]);
+        $invalidThread = raw(Thread::class, [ 'serie_id' => null ]);
 
         $this->post('/threads', [ 'thread' => $invalidThread ])
             ->assertRedirect(Thread::first()->path()); 

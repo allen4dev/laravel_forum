@@ -15,7 +15,7 @@ class SerieTest extends TestCase
     /** @test */
     public function a_serie_knows_his_path()
     {
-        $serie = factory(Serie::class)->create();
+        $serie = create(Serie::class);
 
         $this->assertEquals('/series/' . $serie->id, $serie->path());
     }
@@ -23,7 +23,7 @@ class SerieTest extends TestCase
     /** @test */
     public function a_serie_has_many_threads()
     {
-        $serie = factory(Serie::class)->create();
+        $serie = create(Serie::class);
         
         $this->assertInstanceOf(
             'Illuminate\Database\Eloquent\Collection',

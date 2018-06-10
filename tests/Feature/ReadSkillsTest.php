@@ -18,8 +18,8 @@ class ReadSkillsTest extends TestCase
     */
     public function a_user_can_see_all_the_skills()
     {
-        $laravel = factory(Skill::class)->create([ "name" => "Laravel" ]);
-        $react = factory(Skill::class)->create([ "name" => "React" ]);
+        $laravel = create(Skill::class, [ "name" => "Laravel" ]);
+        $react = create(Skill::class, [ "name" => "React" ]);
 
         $this->get('/')
             ->assertSee($laravel->name)
@@ -29,7 +29,7 @@ class ReadSkillsTest extends TestCase
     /** @test */
     public function a_user_can_see_a_single_skill()
     {
-        $skill = factory(Skill::class)->create();
+        $skill = create(Skill::class);
 
         $this->get($skill->path())
             ->assertSee($skill->name)

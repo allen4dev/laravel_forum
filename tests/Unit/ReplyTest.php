@@ -14,7 +14,7 @@ class ReplyTest extends TestCase
     /** @test  */
     public function a_reply_belongs_to_a_user()
     {
-        $reply = factory(Reply::class)->create();
+        $reply = create(Reply::class);
 
         $this->assertInstanceOf(User::class, $reply->user);
     }

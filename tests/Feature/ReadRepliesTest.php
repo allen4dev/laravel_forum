@@ -16,9 +16,9 @@ class ReadRepliesTest extends TestCase
     /** @test */
     public function a_user_can_see_the_replies_of_a_thread()
     {
-        $thread = factory(Thread::class)->create();
-        $replyOne = factory(Reply::class)->create([ "thread_id" => $thread->id ]);
-        $replyTwo = factory(Reply::class)->create([ "thread_id" => $thread->id ]);
+        $thread = create(Thread::class);
+        $replyOne = create(Reply::class, [ "thread_id" => $thread->id ]);
+        $replyTwo = create(Reply::class, [ "thread_id" => $thread->id ]);
         
         $this->get($thread->path())
             ->assertSee($replyOne->body)

@@ -15,7 +15,7 @@ class ReadProfileTest extends TestCase
     /** @test */
     public function a_user_can_see_the_information_of_other_users()
     {
-        $user = factory(User::class)->create();
+        $user = create(User::class);
 
         $this->get($user->path())
             ->assertSee($user->username)
