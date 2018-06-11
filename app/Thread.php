@@ -33,10 +33,10 @@ class Thread extends Model
         return $this::latest()->take(8)->get();
     }
 
-    public function addReply($body)
+    public function addReply($reply)
     {
         $this->replies()->create([
-            'body' => $body,
+            'body' => $reply['body'],
             'user_id' => auth()->id(),
         ]);
     }

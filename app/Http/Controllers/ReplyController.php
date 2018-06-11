@@ -16,10 +16,10 @@ class ReplyController extends Controller
     public function store(Thread $thread)
     {
         request()->validate([
-            'body' => 'required',
+            'reply.body' => 'required',
         ]);
 
-        $thread->addReply(request('body'));
+        $thread->addReply(request('reply'));
 
         return redirect($thread->path());
     }

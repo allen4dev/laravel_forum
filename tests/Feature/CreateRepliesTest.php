@@ -28,7 +28,7 @@ class CreateRepliesTest extends TestCase
         $thread = create(Thread::class);
         $reply = raw(Reply::class);
 
-        $this->post("/threads/{$thread->id}/reply", $reply)
+        $this->post("/threads/{$thread->id}/reply", compact('reply'))
             ->assertRedirect($thread->path());
 
         $this->assertDatabaseHas('replies', [
@@ -46,8 +46,8 @@ class CreateRepliesTest extends TestCase
         $thread = create(Thread::class);
         $reply = raw(Reply::class, [ 'body' => null ]);
 
-        $this->post("/threads/{$thread->id}/reply", $reply)
-            ->assertSessionHasErrors('body');
+        $this->post("/threads/{$thread->id}/reply", compact('reply'))
+            ->assertSessionHasErrors('reply.body');
 
     }
 }
