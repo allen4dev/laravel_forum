@@ -26,8 +26,10 @@ class SearchThreadsTest extends TestCase
             'title' => 'React new context api'
         ]);
 
+        $searchWord = 'laravel';
+
         // When the user search by the laravel title
-        $this->get('/search?title=laravel')
+        $this->get("/search?title={$searchWord}")
         // Then he should see the laravel thread in the results
             ->assertSee($laravelThread->title);
     }

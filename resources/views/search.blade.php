@@ -57,9 +57,11 @@
 
   <!-- /Results -->
   <ul class="Results">
+    @forelse ($results as $result)
+
     <li class="Result">
       <header class="Result-heading">
-        <h3 class="Result-title">{Thread title}</h3>
+        <h3 class="Result-title">{{ $result->title }}</h3>
       </header>
 
       <section class="Result-body">
@@ -69,27 +71,11 @@
 
       <footer class="Result-footer">
         <span class="Result-tag">{Serie tag}</span>
-        <span class="Result-date">{Thread creation}</span>
+        <span class="Result-date">{{ $result->created_at }}</span>
         <span class="Result-level">{Serie level}</span>
       </footer>
     </li>
-
-    <li class="Result">
-      <header class="Result-heading">
-        <h3 class="Result-title">{Thread title}</h3>
-      </header>
-
-      <section class="Result-body">
-        <h4 class="Result-serie">{Thread serie}</h4>
-        <span class="Result-episode">{Thread episode}</span>
-      </section>
-
-      <footer class="Result-footer">
-        <span class="Result-tag">{Serie tag}</span>
-        <span class="Result-date">{Thread creation}</span>
-        <span class="Result-level">{Serie level}</span>
-      </footer>
-    </li>
+    @empty @endforelse
   </ul>
   <!-- /Results -->
 </section>
