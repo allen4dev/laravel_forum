@@ -37,4 +37,17 @@ class CreateRepliesTest extends TestCase
             'body' => $reply['body'],
         ]);
     }
+
+    /** @test */
+    public function a_reply_requires_a_body()
+    {
+        $this->signin();
+        
+        $thread = create(Thread::class);
+        $reply = raw(Reply::class, [ 'body' => null ]);
+
+        $this->post("/threads/{$thread->id}/reply", $reply)
+            ->assertSessionHasErrors('body');
+
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Reply;
+use App\Thread;
 use App\User;
 
 class ReplyTest extends TestCase
@@ -17,5 +18,13 @@ class ReplyTest extends TestCase
         $reply = create(Reply::class);
 
         $this->assertInstanceOf(User::class, $reply->user);
+    }
+
+    /** @test  */
+    public function a_reply_belongs_to_a_thread()
+    {
+        $reply = create(Reply::class);
+
+        $this->assertInstanceOf(Thread::class, $reply->thread);
     }
 }
