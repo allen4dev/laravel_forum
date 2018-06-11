@@ -32,4 +32,12 @@ class Thread extends Model
     {
         return $this::latest()->take(8)->get();
     }
+
+    public function addReply($body)
+    {
+        $this->replies()->create([
+            'body' => $body,
+            'user_id' => auth()->id(),
+        ]);
+    }
 }
