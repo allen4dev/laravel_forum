@@ -14,6 +14,13 @@ class CreateRepliesTest extends TestCase
     use RefreshDatabase;
     
     /** @test */
+    public function a_guest_can_not_reply_a_thread()
+    {
+        $this->post("/threads/1/reply")
+            ->assertRedirect('login');
+    }
+
+    /** @test */
     public function an_authenticated_user_can_reply_a_thread()
     {
         $this->signin();
