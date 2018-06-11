@@ -23,9 +23,6 @@ Route::get('/series/{serie}', 'SerieController@show')->name('series.detail');
 
 Route::get('/users/{user}', 'UserController@show')->name('users.profile');
 
-// Route::get('/search', function () {
-//     return view('search');
-// });
+Route::get('/search', 'SearchController@index');
 
-  
 Auth::routes();
