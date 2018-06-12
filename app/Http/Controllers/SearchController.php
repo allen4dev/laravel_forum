@@ -13,6 +13,7 @@ class SearchController extends Controller
         $threads = Thread::latest();
 
         if (request()->filled('title')) {
+            $title = request()->title;
             $threads = $threads->where('title', 'like', "%{$title}%");
         }
 
