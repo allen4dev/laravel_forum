@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use App\Skill;
 use App\Thread;
 
 class SearchThreadsTest extends TestCase
@@ -15,9 +16,6 @@ class SearchThreadsTest extends TestCase
     /** @test */
     public function a_user_can_search_threads_by_title()
     {
-        $this->withoutExceptionHandling();
-        // Given whe have two threads
-        // one related to laravel and other related to react
         $laravelThread = create(Thread::class, [
             'title' => 'Testing in laravel'
         ]);
@@ -28,9 +26,24 @@ class SearchThreadsTest extends TestCase
 
         $searchWord = 'laravel';
 
-        // When the user search by the laravel title
         $this->get("/search?title={$searchWord}")
-        // Then he should see the laravel thread in the results
             ->assertSee($laravelThread->title);
+    }
+
+    /** @test */
+    public function a_user_can_search_threads_by_skill()
+    {
+        $laravelSkill = create(Skill::class);
+
+        $laravelThread = create(Thread::class, [
+            'skill_id' => $laravelSkill->id
+        ]);
+
+        $reactThread = create(Thread::class);
+        
+        // ToDo: Search by skill name
+        $this->get("/search?skill={$laravelSkill->id}")
+            ->assertSee($laravelThread->title)
+            ->assertSee($laravelSkill->name);
     }
 }

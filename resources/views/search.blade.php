@@ -70,7 +70,7 @@
       </section>
 
       <footer class="Result-footer">
-        <span class="Result-tag">{Serie tag}</span>
+        <span class="Result-tag">{{ $result->skill->name }}</span>
         <span class="Result-date">{{ $result->created_at }}</span>
         <span class="Result-level">{Serie level}</span>
       </footer>
