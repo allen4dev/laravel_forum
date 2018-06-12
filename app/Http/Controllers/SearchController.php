@@ -10,18 +10,20 @@ class SearchController extends Controller
 {
     public function index()
     {
-        $threads = Thread::latest();
+        $results = Thread::search()->get();
 
-        if (request()->filled('title')) {
-            $title = request()->title;
-            $threads = $threads->where('title', 'like', "%{$title}%");
-        }
+        // $threads = Thread::latest();
 
-        if (request()->filled('skill')) {
-            $threads = $threads->where('skill_id', request()->skill);
-        }
+        // if (request()->filled('title')) {
+        //     $title = request()->title;
+        //     $threads = $threads->where('title', 'like', "%{$title}%");
+        // }
 
-        $results = $threads->get();
+        // if (request()->filled('skill')) {
+        //     $threads = $threads->where('skill_id', request()->skill);
+        // }
+
+        // $results = $threads->get();
 
         return view('search', compact('results'));
     }

@@ -50,6 +50,8 @@ class SearchThreadsTest extends TestCase
     /** @test */
     public function a_user_can_search_threads_by_multiple_tags()
     {
+        $this->withoutExceptionHandling();
+
         $toolingSkill = create(Skill::class);
         $laravelSkill = create(Skill::class);
 
