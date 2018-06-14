@@ -6,24 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Thread;
 
+use App\Filters\ThreadsFilter;
+
 class SearchController extends Controller
 {
-    public function index()
+    public function index(ThreadsFilter $filter)
     {
-        $results = Thread::search()->get();
+        $results = Thread::search($filter)->get();
 
-        // $threads = Thread::latest();
-
-        // if (request()->filled('title')) {
-        //     $title = request()->title;
-        //     $threads = $threads->where('title', 'like', "%{$title}%");
-        // }
-
-        // if (request()->filled('skill')) {
-        //     $threads = $threads->where('skill_id', request()->skill);
-        // }
-
-        // $results = $threads->get();
+        dd($results->toArray());
 
         return view('search', compact('results'));
     }
