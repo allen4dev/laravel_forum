@@ -16,7 +16,6 @@ class SearchThreadsTest extends TestCase
     /** @test */
     public function a_user_can_search_threads_by_title()
     {
-        $this->withoutExceptionHandling();
         $laravelThread = create(Thread::class, [
             'title' => 'Testing in laravel'
         ]);
@@ -51,8 +50,6 @@ class SearchThreadsTest extends TestCase
     /** @test */
     public function a_user_can_search_threads_by_multiple_tags()
     {
-        $this->withoutExceptionHandling();
-
         $toolingSkill = create(Skill::class);
         $laravelSkill = create(Skill::class);
 

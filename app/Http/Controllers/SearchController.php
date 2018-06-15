@@ -14,8 +14,6 @@ class SearchController extends Controller
     {
         $results = Thread::search($filter)->get();
 
-        dd($results->toArray());
-
         return view('search', compact('results'));
     }
 }

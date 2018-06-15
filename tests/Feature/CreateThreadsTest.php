@@ -66,7 +66,7 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function a_thread_requires_a_body()
     {
-        $this->be(factory(User::class)->create());
+        $this->signin();
 
         $invalidThread = raw(Thread::class, [ 'body' => null ]);
 
@@ -77,7 +77,7 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function a_thread_is_related_to_a_skill()
     {
-        $this->be(factory(User::class)->create());
+        $this->signin();
 
         $invalidThread = raw(Thread::class, [ 'skill_id' => null ]);
 
@@ -88,7 +88,7 @@ class CreateThreadsTest extends TestCase
     /** @test */
     public function a_thread_can_optionally_be_related_to_a_serie()
     {
-        $this->be(factory(User::class)->create());
+        $this->signin();
 
         $invalidThread = raw(Thread::class, [ 'serie_id' => null ]);
 

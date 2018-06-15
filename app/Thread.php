@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\Filter\ThreadsFilter;
+use App\Filters\QueryFilter;
 
 class Thread extends Model
 {
     protected $guarded = [];
 
-    public function scopeSearch($query, $filter)
+    public function scopeSearch($query, QueryFilter $filter)
     {
-        $filter->apply($query);
+        return $filter->apply($query);
     }
 
     public function user()
