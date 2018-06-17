@@ -17,20 +17,16 @@ class RecordActivitiesTest extends TestCase
     {
         $this->withoutExceptionHandling();
         
-        // Given whe have an authenticated user
         $this->signin();
         
         $thread = raw(Thread::class, [ 'user_id' => auth()->id() ]);
         
-        // When he creates a new thread
         $this->post('/threads', ['thread' => $thread]);
 
-        // Then a new activity should appear in his profile
-        // with details of the action.
         $this->assertDatabaseHas('activities', [
             'user_id'      => auth()->id(),
-            'type'         => 'create_thread',
-            'subject_id'   => $thread['id'],
+            'type'         => 'created_thread',
+            'subject_id'   => Thread::first()->id,
             'subject_type' => Thread::class,
         ]);
     }

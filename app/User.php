@@ -32,6 +32,11 @@ class User extends Authenticatable
         return "/users/" . $this->id;
     }
 
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
+
     public function publishThread($thread)
     {
         return Thread::create([

@@ -13,6 +13,13 @@ class ReadThreadsTest extends TestCase
 {
     use RefreshDatabase;
 
+    // ToDo: Refactor
+    public function setUp()
+    {
+        parent::setUp();
+        $this->signin();
+    }
+
     /** @test */
     public function a_user_can_see_the_latest_threads()
     {

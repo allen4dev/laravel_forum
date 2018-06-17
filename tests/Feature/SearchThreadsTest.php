@@ -13,6 +13,13 @@ class SearchThreadsTest extends TestCase
 {
     use RefreshDatabase;
 
+    // ToDo: Refactor
+    public function setUp()
+    {
+        parent::setUp();
+        $this->signin();
+    }
+
     /** @test */
     public function a_user_can_search_threads_by_title()
     {

@@ -12,6 +12,13 @@ use App\User;
 
 class ReplyTest extends TestCase
 {
+    // ToDo: Refactor
+    public function setUp()
+    {
+        parent::setUp();
+        $this->signin();
+    }
+
     /** @test  */
     public function a_reply_belongs_to_a_user()
     {

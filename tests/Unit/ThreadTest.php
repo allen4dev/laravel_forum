@@ -14,6 +14,13 @@ class ThreadTest extends TestCase
 {
     use RefreshDatabase;
 
+    // ToDo: Refactor
+    public function setUp()
+    {
+        parent::setUp();
+        $this->signin();
+    }
+
     /** @test */
     public function a_thread_knows_his_path()
     {

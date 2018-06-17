@@ -6,9 +6,26 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Filters\QueryFilter;
 
+use App\Activity;
+
 class Thread extends Model
 {
     protected $guarded = [];
+
+    public static function boot()
+    {
+        static::created(function ($model) {
+            $model->activities()->create([
+                'user_id' => auth()->id(),
+                'type' => 'created_thread',
+            ]);
+        });
+    }
+
+    public function activities()
+    {
+        return $this->morphMany(Activity::class, 'subject');
+    }
 
     public function scopeSearch($query, QueryFilter $filter)
     {
