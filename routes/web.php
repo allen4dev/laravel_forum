@@ -17,6 +17,8 @@ Route::get('/threads/{thread}', 'ThreadController@show')->name('threads.detail')
 Route::post('/threads', 'ThreadController@store');
 Route::post('/threads/{thread}/reply', 'ReplyController@store');
 
+Route::post('/replies/{reply}/favorite', 'FavoriteController@store');
+
 Route::get('/skills/{skill}', 'SkillController@show')->name('skills.detail');
 
 Route::get('/series/{serie}', 'SerieController@show')->name('series.detail');
