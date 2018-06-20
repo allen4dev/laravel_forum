@@ -46,4 +46,11 @@ class FavoriteReplyTest extends TestCase
         
         $this->assertCount(1, $reply->favorites);
     }
+
+    /** @test */
+    public function guests_cannot_favorite_a_reply()
+    {
+        $this->post('/replies/1/favorite')
+            ->assertRedirect('login');
+    }
 }
