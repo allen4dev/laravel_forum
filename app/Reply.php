@@ -21,4 +21,16 @@ class Reply extends Model
     {
         return $this->belongsTo(Thread::class);
     }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    public function favorite()
+    {
+        $this->favorites()->create([
+            'user_id' => auth()->id(),
+        ]);
+    }
 }

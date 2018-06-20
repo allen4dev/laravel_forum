@@ -10,6 +10,6 @@ class FavoriteController extends Controller
 {
     public function store(Reply $reply)
     {
-        
+        $reply->favorite();
     }
 }
