@@ -36,8 +36,17 @@ class Reply extends Model
         }
     }
 
+    public function unfavorite()
+    {
+        $attributes = [ 'user_id' => auth()->id() ];
+
+        if ($this->isFavorited($attributes) ) {
+            return $this->favorites()->where($attributes)->delete();
+        }
+    }
+
     public function isFavorited($attributes)
     {
-        return $this->favorites()->where($attributes)->exists();
+        return !! $this->favorites()->where($attributes)->exists();
     }
 }

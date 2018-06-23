@@ -17,4 +17,9 @@ class FavoriteController extends Controller
     {
         $reply->favorite();
     }
+
+    public function destroy(Reply $reply)
+    {
+        $reply->unfavorite();
+    }
 }

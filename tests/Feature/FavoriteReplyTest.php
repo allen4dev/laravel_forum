@@ -16,13 +16,12 @@ class FavoriteReplyTest extends TestCase
     /** @test */
     public function an_authenticated_user_can_favorite_a_reply()
     {
-        $this->withoutExceptionHandling();
         $this->signin();
 
         $thread = create(Thread::class);
         $reply = create(Reply::class, [ 'thread_id' => $thread->id ]);
 
-        $this->post("/replies/{$reply->id}/favorite");
+        $this->favoriteReply($reply);
 
         $this->assertDatabaseHas('favorites', [
             'user_id'  => auth()->id(),
@@ -38,8 +37,8 @@ class FavoriteReplyTest extends TestCase
         $reply = create(Reply::class);
 
         try {
-            $this->post("/replies/{$reply->id}/favorite");
-            $this->post("/replies/{$reply->id}/favorite");
+            $this->favoriteReply($reply);
+            $this->favoriteReply($reply);
         } catch (\Exception $e) {
             $this->fail('You cannot favorite the same reply more than once.');
         }
@@ -52,5 +51,31 @@ class FavoriteReplyTest extends TestCase
     {
         $this->post('/replies/1/favorite')
             ->assertRedirect('login');
+    }
+
+    /** @test */
+    public function an_authenticated_user_can_unfavorite_a_reply_previously_favorited_by_himself()
+    {
+        $this->signin();
+
+        $reply = create(Reply::class);
+        $this->favoriteReply($reply);
+        
+        $this->post("/replies/{$reply->id}/unfavorite");
+        
+        $this->assertCount(0, $reply->favorites);
+    }
+
+    /**
+     * * Helper methods
+     */
+
+    public function favoriteReply($reply)
+    {
+        $reply = $reply ?? create(Reply::class);
+
+        $this->post("/replies/{$reply->id}/favorite");
+
+        return $reply;
     }
 }
