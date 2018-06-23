@@ -43,6 +43,17 @@
             <!-- /Searchbar -->
 
             <!-- Navigation -->
+            @auth
+            <nav class="Navigation">
+                <ul class="Navigation-list">
+                    <li class="Navigation-item">
+                        <a href="{{ route('users.profile' , auth()->user()) }}" class="Navigation-username">
+                            {{ auth()->user()->username }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            @endauth @guest
             <nav class="Navigation">
                 <ul class="Navigation-list">
                     <li class="Navigation-item">
@@ -53,6 +64,7 @@
                     </li>
                 </ul>
             </nav>
+            @endguest
             <!-- /Navigation -->
         </header>
         <!-- /Header -->
