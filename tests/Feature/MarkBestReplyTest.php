@@ -6,6 +6,9 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use App\Thread;
+use App\Reply;
+
 class MarkBestReplyTest extends TestCase
 {
     use RefreshDatabase;
@@ -13,11 +16,15 @@ class MarkBestReplyTest extends TestCase
     /** @test */
     public function a_thread_creator_can_mark_a_best_reply_by_his_thread()
     {
-        // Given we have an authenticated user
-        // a thread created by himself, and a reply from his thread
+        $this->signin();
 
-        // When he tries to mark the reply as the best reply of his thread
+        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
+        $reply = create(Reply::class, [ 'thread_id' => $thread->id ]);
+
+        $this->post("/threads/{$thread->id}/best-reply", [
+            'reply_id' => $reply->id,
+        ])->assertRedirect("/threads/{$thread->id}");
         
-        // Then we should update the best__reply (id) field of the thread.
+        $this->assertEquals($thread->fresh()->best_reply, $reply->id);
     }
 }

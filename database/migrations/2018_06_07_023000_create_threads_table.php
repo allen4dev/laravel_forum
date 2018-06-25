@@ -18,6 +18,7 @@ class CreateThreadsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('skill_id');
             $table->unsignedInteger('serie_id')->nullable();
+            $table->unsignedInteger('best_reply')->nullable();
             $table->string('title');
             $table->text('description');
             $table->text('body');

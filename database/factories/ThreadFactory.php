@@ -10,6 +10,7 @@ $factory->define(App\Thread::class, function (Faker $faker) {
         'skill_id' => function () {
             return factory(App\Skill::class)->create()->id;
         },
+        'best_reply' => null,
         'serie_id' => function () {
             return factory(App\Serie::class)->create()->id;            
         },
