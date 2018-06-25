@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Thread;
 use App\Reply;
+use App\User;
 
 class MarkBestReplyTest extends TestCase
 {
@@ -25,5 +26,21 @@ class MarkBestReplyTest extends TestCase
             ->assertRedirect("/threads/{$thread->id}");
         
         $this->assertEquals($thread->fresh()->best_reply, $reply->id);
+    }
+
+    /** @test */
+    public function just_thread_creators_can_mark_best_reply()
+    {
+        $this->signin();
+
+        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
+        $reply = create(Reply::class, [ 'thread_id' => $thread->id ]);
+
+        $this->signin(create(User::class));
+
+        $this->post("/replies/{$reply->id}/best-reply")
+            ->assertStatus(403);
+
+        $this->assertNull($thread->best_reply);
     }
 }

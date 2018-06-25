@@ -12,6 +12,8 @@ class MarkBestReplyController extends Controller
     {
         $thread = $reply->thread;
 
+        $this->authorize('update', $thread);
+
         $thread->markBestReply($reply);
 
         return redirect($thread->path());
