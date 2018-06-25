@@ -9,6 +9,7 @@ use App\Filters\QueryFilter;
 use App\RecordsActivity;
 
 use App\Activity;
+use App\Reply;
 
 class Thread extends Model
 {
@@ -52,5 +53,12 @@ class Thread extends Model
             'body' => $reply['body'],
             'user_id' => auth()->id(),
         ]);
+    }
+
+    public function markBestReply(Reply $reply)
+    {
+        $this->update([ 'best_reply' => $reply->id ]);
+
+        return $this;
     }
 }

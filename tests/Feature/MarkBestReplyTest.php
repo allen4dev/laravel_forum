@@ -21,9 +21,8 @@ class MarkBestReplyTest extends TestCase
         $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
         $reply = create(Reply::class, [ 'thread_id' => $thread->id ]);
 
-        $this->post("/threads/{$thread->id}/best-reply", [
-            'reply_id' => $reply->id,
-        ])->assertRedirect("/threads/{$thread->id}");
+        $this->post("/replies/{$reply->id}/best-reply")
+            ->assertRedirect("/threads/{$thread->id}");
         
         $this->assertEquals($thread->fresh()->best_reply, $reply->id);
     }

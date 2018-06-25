@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Thread;
+use App\Reply;
 
 class MarkBestReplyController extends Controller
 {
-    public function store(Thread $thread)
+    public function store(Reply $reply)
     {
-        $thread->best_reply = request()->reply_id;
-        $thread->save();
+        $thread = $reply->thread;
 
-        return redirect("/threads/{$thread->id}");
+        $thread->markBestReply($reply);
+
+        return redirect($thread->path());
     }
 }
