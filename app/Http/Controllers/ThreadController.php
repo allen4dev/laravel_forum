@@ -31,4 +31,15 @@ class ThreadController extends Controller
 
         return redirect($thread->path());
     }
+
+    public function update(Thread $thread)
+    {
+        $thread->update(request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'body' => 'required',
+        ]));
+
+        return redirect($thread->path());
+    }
 }

@@ -95,33 +95,4 @@ class CreateThreadsTest extends TestCase
         $this->post('/threads', [ 'thread' => $invalidThread ])
             ->assertRedirect(Thread::first()->path()); 
     }
-
-    /** @test */
-    public function a_thread_creator_can_update_his_thread()
-    {
-        // Given we have an authenticated user
-        $this->signin();
-        // an a thread created by him
-        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
-
-        // When he want to update the thread /threads/{thread}
-        $this->patch("/threads/{$thread->id}", [
-            'title' => 'New thread title',
-            'body' => 'New thread body',
-            'description' => 'New thread description',
-        ]);
-
-        // Then the thread should be updated with the new data
-        $this->assertEquals()
-    }
-
-    /** @test */
-    // public function a_thread_just_can_be_updated_by_his_creator()
-    // {
-    //     // Given we have an authenticated user a thread created by him
-
-    //     // When 
-        
-    //     // Then 
-    // }
 }
