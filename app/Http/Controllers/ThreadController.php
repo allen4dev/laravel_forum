@@ -44,4 +44,11 @@ class ThreadController extends Controller
 
         return redirect($thread->path());
     }
+
+    public function destroy(Thread $thread)
+    {
+        $thread->delete();
+
+        return redirect('/users/' . auth()->id());
+    }
 }
