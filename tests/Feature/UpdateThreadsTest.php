@@ -14,6 +14,36 @@ class UpdateThreadsTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function a_thread_requires_a_title_to_be_updated()
+    {
+        $this->signin();
+        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
+
+        $this->patch($thread->path(), [ 'title' => null ])
+            ->assertSessionHasErrors('title');
+    }
+
+    /** @test */
+    public function a_thread_requires_a_description_to_be_updated()
+    {
+        $this->signin();
+        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
+
+        $this->patch($thread->path(), [ 'description' => null ])
+            ->assertSessionHasErrors('description');
+    }
+
+    /** @test */
+    public function a_thread_requires_a_body_to_be_updated()
+    {
+        $this->signin();
+        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
+
+        $this->patch($thread->path(), [ 'body' => null ])
+            ->assertSessionHasErrors('body');
+    }
+
+    /** @test */
     public function a_thread_creator_can_update_his_thread()
     {
         $this->signin();
