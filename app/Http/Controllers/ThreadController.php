@@ -47,6 +47,8 @@ class ThreadController extends Controller
 
     public function destroy(Thread $thread)
     {
+        $this->authorize('delete', $thread);
+
         $thread->delete();
 
         return redirect('/users/' . auth()->id());

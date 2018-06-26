@@ -54,6 +54,6 @@ class ThreadPolicy
      */
     public function delete(User $user, Thread $thread)
     {
-        //
+        return $thread->user_id == $user->id;        
     }
 }

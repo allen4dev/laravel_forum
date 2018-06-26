@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Thread;
+use App\User;
 
 class DeleteThreadsTest extends TestCase
 {
@@ -23,5 +24,22 @@ class DeleteThreadsTest extends TestCase
             ->assertRedirect(auth()->user()->path());
 
         $this->assertCount(0, auth()->user()->threads);
+    }
+
+    /** @test */
+    public function only_thread_creators_can_delete_his_threads()
+    {
+        $this->signin();
+
+        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
+
+        $this->signin(create(User::class));
+
+        $this->delete($thread->path())->assertStatus(403);
+        
+        $this->assertDatabaseHas('threads', [
+            'id'    => $thread->id,
+            'title' => $thread->title,
+        ]);
     }
 }
