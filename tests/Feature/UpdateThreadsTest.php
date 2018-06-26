@@ -25,7 +25,7 @@ class UpdateThreadsTest extends TestCase
             'description' => 'New thread description',
         ];
         
-        $this->patch("/threads/{$thread->id}", $updatedThread)
+        $this->patch($thread->path(), $updatedThread)
             ->assertRedirect($thread->path());
 
         tap($thread->fresh(), function ($thread) use ($updatedThread) {
@@ -36,12 +36,11 @@ class UpdateThreadsTest extends TestCase
     }
 
     /** @test */
-    // public function a_thread_just_can_be_updated_by_his_creator()
-    // {
-    //     // Given we have an authenticated user a thread created by him
+    public function a_thread_just_can_be_updated_by_his_creator()
+    {
+        $this->signin();
+        $thread = create(Thread::class);
 
-    //     // When 
-        
-    //     // Then 
-    // }
+        $this->patch($thread->path(), [])->assertStatus(403);
+    }
 }
