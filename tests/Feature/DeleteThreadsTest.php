@@ -24,6 +24,7 @@ class DeleteThreadsTest extends TestCase
             ->assertRedirect(auth()->user()->path());
 
         $this->assertCount(0, auth()->user()->threads);
+        $this->assertDatabaseMissing('threads', ['id' => $thread->id]);
     }
 
     /** @test */
@@ -41,5 +42,15 @@ class DeleteThreadsTest extends TestCase
             'id'    => $thread->id,
             'title' => $thread->title,
         ]);
+    }
+
+    public function a_deleted_thread_should_also_delete_his_replies()
+    {
+        // Given we have an authenticated user
+        // a thread created by him and a reply for his thread
+
+        // When he  delete his thread
+        
+        // Then the reply should also be deleted
     }
 }
