@@ -6,6 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use App\Reply;
 use App\Thread;
 use App\User;
 
@@ -44,13 +45,16 @@ class DeleteThreadsTest extends TestCase
         ]);
     }
 
+    /** @test */
     public function a_deleted_thread_should_also_delete_his_replies()
     {
-        // Given we have an authenticated user
-        // a thread created by him and a reply for his thread
+        $this->signin();
 
-        // When he  delete his thread
+        $thread = create(Thread::class, [ 'user_id' => auth()->id() ]);
+        $reply = create(Reply::class, [ 'thread_id' => $thread->id ]);
+
+        $this->delete($thread->path());
         
-        // Then the reply should also be deleted
+        $this->assertDatabaseMissing('replies', [ 'id' => $reply->id ]);
     }
 }
