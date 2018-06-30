@@ -81,6 +81,18 @@ class Thread extends Model
         }
     }
 
+    public function unsubscribe()
+    {
+        $attributes = [
+            'user_id'   => auth()->id(),
+            'thread_id' => $this->id,
+        ];
+
+        $this->subscriptions()->where($attributes)->delete();
+
+        return $this;
+    }
+
     public function isSubscribed($attributes)
     {
         return !! $this->subscriptions()->where($attributes)->exists();

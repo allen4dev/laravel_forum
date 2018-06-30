@@ -18,4 +18,10 @@ class ThreadSubscriptionController extends Controller
         $thread->subscribe();
     }
 
+    public function destroy(Thread $thread)
+    {
+        $thread->unsubscribe();
+
+        return redirect($thread->path());
+    }
 }

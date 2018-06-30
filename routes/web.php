@@ -19,6 +19,7 @@ Route::delete('/threads/{thread}', 'ThreadController@destroy');
 Route::post('/threads', 'ThreadController@store');
 Route::post('/threads/{thread}/reply', 'ReplyController@store');
 Route::post('/threads/{thread}/subscribe', 'ThreadSubscriptionController@store');
+Route::delete('/threads/{thread}/unsubscribe', 'ThreadSubscriptionController@destroy');
 
 Route::post('/replies/{reply}/favorite', 'FavoriteController@store');
 Route::post('/replies/{reply}/unfavorite', 'FavoriteController@destroy');
