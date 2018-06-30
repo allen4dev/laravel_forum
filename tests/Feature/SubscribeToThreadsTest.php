@@ -35,4 +35,28 @@ class SubscribeToThreadsTest extends TestCase
         $this->post("/threads/1/subscribe")
             ->assertRedirect('login');
     }
+
+    /** @test */
+    public function an_authenticated_user_cannot_subscribe_two_times_to_a_thread()
+    {
+        $this->signin();
+
+        $thread = create(Thread::class);
+
+        try {
+            $this->subscribe($thread);
+            $this->subscribe($thread);
+        } catch(\Exception $e) {
+            $this->fail('You cannot subscribe to a thread more than once');
+        }
+
+        $this->assertCount(1, $thread->subscriptions);
+    }
+
+    public function subscribe($thread)
+    {
+        $this->post("/threads/{$thread->id}/subscribe");
+
+        return $thread;
+    }
 }

@@ -17,4 +17,5 @@ class ThreadSubscriptionController extends Controller
     {
         $thread->subscribe();
     }
+
 }

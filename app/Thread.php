@@ -69,8 +69,20 @@ class Thread extends Model
 
     public function subscribe()
     {
-        $this->subscriptions()->create([
+        $attributes = [
             'user_id' => auth()->id(),
-        ]);
+            'thread_id' => $this->id,
+        ];
+
+        if (! $this->isSubscribed($attributes)) {
+            $this->subscriptions()->create([
+                'user_id' => auth()->id(),
+            ]);
+        }
+    }
+
+    public function isSubscribed($attributes)
+    {
+        return !! $this->subscriptions()->where($attributes)->exists();
     }
 }
