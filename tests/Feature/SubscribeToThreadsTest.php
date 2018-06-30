@@ -21,11 +21,18 @@ class SubscribeToThreadsTest extends TestCase
 
         $this->signin(create(User::class));
 
-        $this->post("/threads/{$thread->id}/subscribe");
+        $this->post($thread->path() . '/subscribe');
 
         $this->assertDatabaseHas('thread_subscriptions', [
             'user_id'   => auth()->id(),
             'thread_id' => $thread->id,
         ]);
+    }
+
+    /** @test */
+    public function guests_cannot_subscribe_to_a_thread()
+    {
+        $this->post("/threads/1/subscribe")
+            ->assertRedirect('login');
     }
 }
