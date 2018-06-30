@@ -36,6 +36,11 @@ class Thread extends Model
     {
         return $this->hasMany(Reply::class);
     }
+    
+    public function subscriptions()
+    {
+        return $this->hasMany(ThreadSubscriptions::class);
+    }
 
     public function path()
     {
@@ -60,5 +65,12 @@ class Thread extends Model
         $this->update([ 'best_reply' => $reply->id ]);
 
         return $this;
+    }
+
+    public function subscribe()
+    {
+        $this->subscriptions()->create([
+            'user_id' => auth()->id(),
+        ]);
     }
 }
