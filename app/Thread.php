@@ -8,6 +8,8 @@ use App\Filters\QueryFilter;
 
 use App\RecordsActivity;
 
+use App\Events\ThreadWasReplied;
+
 use App\Activity;
 use App\Reply;
 
@@ -54,10 +56,12 @@ class Thread extends Model
 
     public function addReply($reply)
     {
-        $this->replies()->create([
+        $result = $this->replies()->create([
             'body' => $reply['body'],
             'user_id' => auth()->id(),
         ]);
+
+        event(new ThreadWasReplied($result, $this));
     }
 
     public function markBestReply(Reply $reply)

@@ -17,9 +17,8 @@ class NotificationsTest extends TestCase
     /** @test */
     public function an_authenticated_user_is_notified_when_a_subscribed_thread_receives_a_new_reply()
     {
-        $this->withoutExceptionHandling();
-        // Given we have an authenticated user subscribed to a thread
         $this->signin(create(User::class));
+        
         $user = auth()->user();
 
         $thread = create(Thread::class);
@@ -27,10 +26,8 @@ class NotificationsTest extends TestCase
         $thread->subscribe();
         
         $this->signin(create(User::class));
-        // When the thread receives a new reply
         $thread->addReply([ 'body' => 'Some reply' ]);
         
-        // Then a new notification should exists in the database
         $this->assertCount(1, $user->fresh()->notifications);
     }
 }
